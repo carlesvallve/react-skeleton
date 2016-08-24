@@ -1,0 +1,28 @@
+module.exports = {
+    entry: './app/main.js',
+
+    output: {
+        path: './app',
+        filename: 'bundle.js'
+    },
+
+    devServer: {
+        inline: true,
+        contentBase: './app',
+        port: 1972
+    },
+
+    module: {
+        loaders: [
+            {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel'
+            },
+            {
+            test: /\.scss$/,
+            loaders: ["style", "css", "sass"]
+            }
+        ]
+    },
+};

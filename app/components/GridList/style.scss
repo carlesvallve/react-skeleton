@@ -1,0 +1,64 @@
+// desktop
+
+.gridlist {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.gridlist-title {
+    font-family: 'museo-sans-rounded', sans-serif;
+    color: #2a1a04;
+    text-align: center;
+}
+
+.gridlist-title-text {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 50px;
+    font-weight: 300;
+    margin-right: 15px;
+    margin-top: 10px; // remove
+    margin-bottom: 25px; // remove
+}
+
+.gridlist-title-percentage {
+    font-size: 62px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-shadow: 3px 3px 0 #ffa9ce;
+
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+
+    margin-top: 16px;
+}
+
+.gridlist-title-date {
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    margin: auto;
+    margin-top: 0;
+    padding-bottom: 1px;
+    text-align: center;
+    text-decoration: underline;
+    text-shadow: none;
+}
+
+.gridlist-scroller {
+    position: relative;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.gridlist-list {
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    text-align: center;
+    display:inline-block;
+    margin-bottom: 15px;
+}
