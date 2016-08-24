@@ -15,8 +15,9 @@ const Thumb = (props) => {
 
       <div id='thumb-image' className='thumb-image'>
         <img src={path} alt='Smiley face' width='100%' />
-        <div className='thumb-play-icon' />
       </div>
+
+      <div className='thumb-play-icon' />
 
       <div className='thumb-info'>
         <div className='thumb-title'>{title}</div>

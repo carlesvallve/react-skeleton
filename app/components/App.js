@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
-import AddTodo from '../containers/AddTodo'
-import VisibleTodoList from '../containers/VisibleTodoList'
-import Footer from './Footer'
+require('../css/stylesheet.scss');
+import React from 'react'
+//import AddTodo from '../containers/AddTodo'
+//import VisibleTodoList from '../containers/VisibleTodoList'
+//import Footer from './Footer'
 
 import GridList from './GridList/GridList'
-require('../css/stylesheet.scss');
+import Popup from './Popup/Popup'
+
 
 
 const App = () => {
@@ -18,7 +20,7 @@ const App = () => {
       <Footer />
       */}
 
-      <div className='#contents, .pageWrap' style={{
+      {/*<div className='#contents, .pageWrap' style={{
           width: '100%', //980 + 'px',
           maxWidth: '1280px',
           minWidth: '800px',
@@ -26,12 +28,14 @@ const App = () => {
           marginLeft: 'auto',
           marginRight: 'auto'
         }}>
-        <GridList
-          data={require("json!../assets/json/categories.json")}
-          text='This is a grid list'
-        />
-      </div>
+      </div>*/}
 
+      <GridList
+        data={require("json!../assets/json/categories.json")}
+        text='This is a grid list'
+      />
+
+      <Popup />
     </div>
   )
 }

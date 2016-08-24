@@ -1,0 +1,186 @@
+// desktop
+
+.popup {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-bg {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+}
+
+.popup-box {
+    font-size: 16px;
+    font-weight: 600;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 320px;
+    max-width: 538px;
+    margin: auto;
+    color: #464646;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+
+    width: 521px;
+    height: 482px;
+}
+
+.popup-content {
+    width: 100%;
+    vertical-align: top;
+    margin: 14px;
+    padding-top: 5px;
+}
+
+.popup-video {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 490px;
+    height: 276px;
+    background: #000;
+}
+
+video {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-bottom {
+    width: 100%;
+    height: 155px;
+    margin-top: 290px;
+}
+
+.popup-img {
+    max-height: 100%;
+}
+
+.popup-info {
+    position: absolute;
+    display: inline-block;
+    width: 356px;
+    margin-left: 15px;
+}
+
+.popup-text {
+    font-family: 'museo-sans-rounded', sans-serif;
+}
+
+.popup-text dt {
+    height: 155px;
+    margin-right: 10px;
+}
+.popup-text dt, .popup-text dd {
+    float: left;
+    overflow: hidden;
+}
+.page-wrap img, .dom-modalbox img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: bottom;
+}
+.popup-text dd {
+    position: relative;
+    width: 356px;
+    height: 154px;
+}
+.popup-text dt, .popup-text dd {
+    float: left;
+    overflow: hidden;
+}
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.popup-text p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2em;
+    overflow: hidden;
+    margin: auto auto 5px;
+    text-overflow: ellipsis;
+    height: 65px;
+}
+
+.popup-text .actress-name {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 24px;
+    display: inline-block;
+    overflow: hidden;
+    height: 24px;
+    margin-right: 15px;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    color: #ef1c48;
+    max-width: 200px;
+}
+
+.popup-text .price {
+    font-weight: normal;
+    line-height: 24px;
+    display: inline-block;
+    width: 112px;
+    height: 24px;
+    margin: auto;
+    padding: 0 7px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    border-radius: 12px;
+    background-color: #ef1c48;
+}
+
+.popup-text .btn-summer {
+    font-size: 25px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+}
+
+// smartphone
+
+.smartphone .popup-bg {
+    background: black;
+}
+
+.smartphone .popup-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+.smartphone .popup-box {
+    width: 20px;
+    height: 20px;
+    min-height: 0px;
+    max-width: 0px;
+    background: pink;
+}
+
+.smartphone .popup-bottom {
+    display: none;
+}

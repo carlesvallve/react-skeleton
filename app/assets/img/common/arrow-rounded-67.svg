@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="67px" height="67px" viewBox="0 0 67 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>play</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-Portrait-Copy" transform="translate(-153.000000, -368.000000)">
+            <g id="play" transform="translate(153.454545, 368.642453)">
+                <ellipse id="Oval-1" fill="#FFFFFF" cx="33.1060606" cy="33.1080059" rx="33.1060606" ry="33.1080059"></ellipse>
+                <path d="M50.1251645,31.9115767 C51.7988819,32.8908158 51.7988819,35.3096878 50.1251645,36.288547 L25.492299,50.7000604 C24.4019161,51.3380838 23.030303,50.5516562 23.030303,49.2877546 L23.030303,18.912368 C23.030303,17.6488463 24.4019161,16.8620393 25.492299,17.5000628 L50.1251645,31.9115767 Z" fill="#000000"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -18,9 +18,9 @@ const GridList = (props) => {
     return (
       <div className='gridlist'>
 
-        <h2 className='gridlist-title'>
+        <div className='gridlist-title'>
           <span className='gridlist-title-text'>{props.text}</span>
-        </h2>
+        </div>
 
         <div id='scroller' className='gridlist-scroller'>
           <ul id='list' className='gridlist-list'>
