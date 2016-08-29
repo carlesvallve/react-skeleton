@@ -1,3 +1,118 @@
+
+/* replicate server's special pages css environment */
+.mainWrap {
+    top: 0;
+    left: 0;
+    position: relative;
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mainWrap {
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: #fff;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.pageWrap {
+    margin-top: 0;
+    background: #fff;
+    min-height: 800px;
+}
+
+ul, li {
+    list-style: none;
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+}
+html, body, ol, ul, li, h1, p {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*, input, textarea, button, select, a {
+    -webkit-tap-highlight-color: transparent;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+user agent stylesheet
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 400;
+}
+blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, th, ul {
+    margin: 0;
+    padding: 0;
+}
+*, a, button, input, select, textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+h3 {
+    font-size: 28px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.1em;
+    margin-bottom: 30px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
+/* overrides */
+#contents {
+    position: relative;
+    width: 100%;
+    padding: 0;
+
+    margin: 0 auto;
+    text-align: left;
+    box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
+    background: -webkit-linear-gradient(top,#fff,#f0f0f0);
+    background: -moz-linear-gradient(top,#fff,#f0f0f0);
+    background: linear-gradient(top,#fff,#f0f0f0);
+
+    display: block;
+    min-height: 1%;
+}
+
+// desktop
+
 body {
     margin: 0;
     padding: 0;
@@ -5,21 +120,176 @@ body {
     text-decoration: none;
     border: none;
     outline: none;
+    //text-align: center;
 }
 
-#root {
-    display: block;
-    position: relative;
-    padding: 0;
-    margin: 0 auto;
-    box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
-
-    width: 100%;
-    height: same-as-width;
-    max-width: 980px;
-    min-width: 768px;
-
+.app {
     font-family: 'museo-sans-rounded', sans-serif;
+
     color: #2a1a04;
     background-color: #fcece4;
+    background-image:
+        url('/assets/img/special/landing_pages/042/desktop/bg_top.jpg'),
+        url('/assets/img/special/landing_pages/042/desktop/bg_bottom.jpg');
+    background-repeat: no-repeat;
+    background-position: center top, center bottom 70px;
+    background-size: contain, contain;
+
+    padding-top: 340px;
+
+    max-width: 1280px;
+    min-width: 748px;
+    margin: 0 auto;
+    //box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
 }
+
+.categories-list {
+    margin-top: 340px;
+}
+
+
+// smartphone
+
+// #contents.smartphone {
+//     width: 100%;
+// }
+
+ .app.smartphone {
+    background-image: url('/assets/img/special/landing_pages/042/smartphone/bg_top.jpg');
+    background-position: center top;
+    background-size: 100%;
+
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.smartphone .categories-list {
+    margin-top: -65px;
+    padding-bottom: 25px;
+}
+
+.smartphone footer {
+    background: #303030;
+    color: #A5A9B2;
+    font-size: 0.78em;
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+/* buttons */
+
+.btn-summer
+ {
+    font-size: 30px;
+    font-weight: 700;
+    display: inline-block;
+    padding: 4px 10px;
+    letter-spacing: -.9px;
+    color: #fff;
+    border: solid 1px #a10033;
+    border-bottom-width: 5px;
+    border-radius: 3px;
+    background: #ef1c48;
+    box-shadow: 0 1px 6px 0 rgba(161, 0, 51, .52);
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 300px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn-signup {
+    display: inline-block;
+    padding: 8px 30px;
+    color: #fff;
+    border: 1px solid #b10e31;
+    border-radius: 3px;
+    background: #e03551;
+    font-size: 12pt;
+    font-weight: normal;
+    letter-spacing: 0px;
+    text-decoration: none;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: false;
+}
+
+.smartphone .btn-summer {
+    font-size: 22px;
+    display: block;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 10px 0;
+    text-align: center;
+
+    width: 90%;
+    max-width: 355px;
+}
+
+.u-fColor--deepred {
+    color: #6b0934 !important;
+}
+
+
+// body {
+//     margin: 0;
+//     padding: 0;
+//     list-style: none;
+//     text-decoration: none;
+//     border: none;
+//     outline: none;
+// }
+//
+// blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, th, ul {
+//     margin: 0;
+//     padding: 0;
+// }
+//
+// *, a, button, input, select, textarea {
+//     -webkit-tap-highlight-color: transparent;
+// }
+//
+// #root {
+//     display: block;
+//     position: relative;
+//     padding: 0;
+//     margin: 0 auto;
+//     box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
+//
+//     width: 100%;
+//     height: same-as-width;
+//     max-width: 980px;
+//     min-width: 768px;
+//
+//     font-family: 'museo-sans-rounded', sans-serif;
+//     color: #2a1a04;
+//     background-color: #fcece4;
+// }
+//
+// .btn-summer
+//  {
+//     font-size: 30px;
+//     font-weight: 700;
+//     display: inline-block;
+//     padding: 4px 10px;
+//     letter-spacing: -.9px;
+//     color: #fff;
+//     border: solid 1px #a10033;
+//     border-bottom-width: 5px;
+//     border-radius: 3px;
+//     background: #ef1c48;
+//     box-shadow: 0 1px 6px 0 rgba(161, 0, 51, .52);
+//     text-decoration: none;
+//     cursor: pointer;
+//     min-width: 300px;
+//
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+// }

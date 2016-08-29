@@ -1,41 +1,53 @@
-require('../css/stylesheet.scss');
-import React from 'react'
 //import AddTodo from '../containers/AddTodo'
 //import VisibleTodoList from '../containers/VisibleTodoList'
 //import Footer from './Footer'
+// <AddTodo />
+// <VisibleTodoList />
+// <Footer />
 
-import GridList from './GridList/GridList'
+require('../css/stylesheet.scss');
+import React from 'react'
+import { SetLanguage, SetPlatform } from './Utils/Utils'
+import GridList from './List/GridList/GridList'
+import SliderList from './List/Sliderlist/Sliderlist.js';
 import Popup from './Popup/Popup'
-
 
 
 const App = () => {
 
-  window.lang= 'en'
+  // config application
+  SetLanguage();
+  SetPlatform();
+
+  let list, appClassName;
+  if (window.platform === 'desktop' || window.platform === 'tablet') {
+    appClassName = 'app'
+    list = <GridList
+      data={require("json!../assets/json/categories.json")}
+      text='This is a grid list'
+      expanded={false}
+      itemCount={8}
+    />
+  } else {
+    appClassName = 'app smartphone'
+    list = <SliderList
+      data={require("json!../assets/json/categories.json")}
+      text='This is a slider list'
+      itemCount={16}
+    />
+  }
+
 
   return (
-    <div>
-      {/*<AddTodo />
-      <VisibleTodoList />
-      <Footer />
+    <div className={appClassName}>
+
+      {/*
+
       */}
 
-      {/*<div className='#contents, .pageWrap' style={{
-          width: '100%', //980 + 'px',
-          maxWidth: '1280px',
-          minWidth: '800px',
-          background: 'pink',
-          marginLeft: 'auto',
-          marginRight: 'auto'
-        }}>
-      </div>*/}
+      {list}
+      <Popup active={false} />
 
-      <GridList
-        data={require("json!../assets/json/categories.json")}
-        text='This is a grid list'
-      />
-
-      <Popup />
     </div>
   )
 }
