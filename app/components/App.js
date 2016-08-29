@@ -8,6 +8,7 @@
 require('../css/stylesheet.scss');
 import React from 'react'
 import { SetLanguage, SetPlatform } from './Utils/Utils'
+import Logo from './Logo/Logo'
 import GridList from './List/GridList/GridList'
 import SliderList from './List/Sliderlist/Sliderlist.js';
 import Popup from './Popup/Popup'
@@ -44,6 +45,7 @@ const App = () => {
       {/*
 
       */}
+      <Logo />
 
       {list}
       <Popup active={false} />

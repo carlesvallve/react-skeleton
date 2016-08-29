@@ -11,7 +11,9 @@ class Thumb extends Component {
   constructor(props) {
     super(props)
 
-    this.path = 'url(//pics.r18.com/digital/video/' + this.props.data.id + '/' +
+    this.path =
+      'url(//pics.r18.com/digital/video/' +
+      this.props.data.id + '/' +
       this.props.data.id + 'pl.jpg)'
     this.style = { width: this.props.width }
     this.title = this.props.data.title[window.lang]
