@@ -5,6 +5,8 @@
     padding: 0;
     text-align: center;
     padding-bottom: 20px;
+
+    clear: both;
 }
 
 .gridlist-title {
@@ -12,7 +14,6 @@
     color: #2a1a04;
     text-align: center;
     padding: 10px 0;
-    margin-bottom: 20px;
 }
 
 .gridlist-title-text {
@@ -24,7 +25,6 @@
 .gridlist-scroller {
     position: relative;
     text-align: center;
-    margin-top: -20px;
 }
 
 .gridlist-list {
@@ -33,5 +33,5 @@
     padding: 1px;
     text-align: center;
     display:inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }

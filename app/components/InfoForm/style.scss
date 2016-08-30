@@ -1,0 +1,72 @@
+.infoform {
+    margin-top: 10px;
+    text-align: left;
+    height: same-as-width;
+}
+
+.container {
+    position: relative;
+    bottom: 0;
+    left: 35px;
+    width: 338px;
+    height: 645px;
+    content: '';
+    background: url('/assets/img/special/landing_pages/042/desktop/img_girl.png') center top no-repeat;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.1em;
+    margin-bottom: 30px;
+}
+
+.features {
+    padding-top: 10px;
+    width: 920px;
+    text-align: left;
+    padding-left: 375px;
+}
+
+.featurelist li {
+    font-family: 'proxima-nova', 'Proxima Nova', 'helvetica-neue', helvetica, arial, sans-serif;
+    font-weight: normal;
+    color: #2a1a04;
+    font-size: 17px;
+
+    padding: 11px 0 11px 50px;
+    margin-bottom: 10px;
+    margin-left: -20px;
+
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+.featurelist li:nth-child(1) {
+    background-image: url('/assets/img/special/landing_pages/042/ico-film.svg');
+}
+
+.featurelist li:nth-child(2) {
+    background-image: url('/assets/img/special/landing_pages/042/ico-hd.svg');
+}
+
+.featurelist li:nth-child(3) {
+    background-image: url('/assets/img/special/landing_pages/042/ico-download.svg');
+}
+
+.featurelist li:nth-child(4) {
+    background-image: url('/assets/img/special/landing_pages/042/ico-star.svg');
+}
+
+.featurelist li:nth-child(5) {
+    background-image: url('/assets/img/special/landing_pages/042/ico-heart.svg');
+}
+
+.featurelist li:nth-child(6) {
+    background-image: url('/assets/img/special/landing_pages/042/ico-padlock.svg');
+}
+
+.infoform .featurelist li:nth-child(7) {
+    background-image: url('/assets/img/special/landing_pages/042/ico-tick.svg');
+}

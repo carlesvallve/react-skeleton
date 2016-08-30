@@ -11,6 +11,7 @@ import { SetLanguage, SetPlatform } from './Utils/Utils'
 import Logo from './Logo/Logo'
 import GridList from './List/GridList/GridList'
 import SliderList from './List/Sliderlist/Sliderlist.js';
+import InfoForm from './InfoForm/InfoForm'
 import Popup from './Popup/Popup'
 
 
@@ -20,9 +21,11 @@ const App = () => {
   SetLanguage();
   SetPlatform();
 
-  let list, appClassName;
+  let list, appClassName, contentsStyle;
+
   if (window.platform === 'desktop' || window.platform === 'tablet') {
     appClassName = 'app'
+    contentsStyle = { width: '980px'}
     list = <GridList
       data={require("json!../assets/json/categories.json")}
       text='This is a grid list'
@@ -31,6 +34,7 @@ const App = () => {
     />
   } else {
     appClassName = 'app smartphone'
+    contentsStyle = { width: '100%'}
     list = <SliderList
       data={require("json!../assets/json/categories.json")}
       text='This is a slider list'
@@ -38,18 +42,14 @@ const App = () => {
     />
   }
 
-
   return (
-    <div className={appClassName}>
-
-      {/*
-
-      */}
-      <Logo />
-
-      {list}
-      <Popup active={false} />
-
+    <div id='contents' className='#contents, .pageWrap' style={contentsStyle}>
+      <div className={appClassName}>
+        <Logo />
+        {list}
+        <InfoForm />
+        <Popup active={false} />
+      </div>
     </div>
   )
 }
