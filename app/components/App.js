@@ -8,6 +8,9 @@
 require('../css/stylesheet.scss');
 import React from 'react'
 import { SetLanguage, SetPlatform } from './Utils/Utils'
+
+import Header from './Header/Header'
+import Footer from './Footer/Footer'
 import Logo from './Logo/Logo'
 import GridList from './List/GridList/GridList'
 import SliderList from './List/Sliderlist/Sliderlist.js';
@@ -18,14 +21,18 @@ import Popup from './Popup/Popup'
 const App = () => {
 
   // config application
+
   SetLanguage();
   SetPlatform();
+
+
+  // set elements depending on platform
 
   let list, appClassName, contentsStyle;
 
   if (window.platform === 'desktop' || window.platform === 'tablet') {
     appClassName = 'app'
-    contentsStyle = { width: '980px'}
+    //contentsStyle = { width: '980px'}
     list = <GridList
       data={require("json!../assets/json/categories.json")}
       text='This is a grid list'
@@ -34,7 +41,7 @@ const App = () => {
     />
   } else {
     appClassName = 'app smartphone'
-    contentsStyle = { width: '100%'}
+    //contentsStyle = { width: '100%'}
     list = <SliderList
       data={require("json!../assets/json/categories.json")}
       text='This is a slider list'
@@ -42,12 +49,17 @@ const App = () => {
     />
   }
 
+
+  // render application elements
+
   return (
     <div id='contents' className='#contents, .pageWrap' style={contentsStyle}>
       <div className={appClassName}>
+        <Header />
         <Logo />
         {list}
         <InfoForm />
+        <Footer/>
         <Popup active={false} />
       </div>
     </div>

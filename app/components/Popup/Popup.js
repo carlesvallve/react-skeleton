@@ -3,6 +3,11 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { openPopup, closePopup } from '../../actions'
 
+// TODO:
+// Convert to class and implement open/close methods
+// Freeze scroll when popup opens
+// Implement video pause/resume when closing and reopening same thumb
+
 
 const mapStateToProps = (state, ownProps) => {
   if (state.popup.active === undefined) {
