@@ -40,18 +40,14 @@ class SliderList extends Component {
         </div>
 
         <div className='gridlist-title'>
-          <span className='gridlist-title-text'>
-            {window.content.movies400[window.lang]}
-          </span>
+          <span className='gridlist-title-text'>{window.content.gridlist_title[window.lang]}</span>
+          <span className='gridlist-title-percentage'>{window.content.gridlist_percentage[window.lang]}</span>
         </div>
 
         <a
           className='btn-summer'
           href='http://www.r18.com/videos/vod/movies/list/id=10000084/pagesize=120/price=all/sort=popular/type=category/page=1'>
-          <span>{window.content.shopfull[window.lang]}
-            <span className="u-fColor--deepred"> 50% OFF </span>
-            {window.content.offer[window.lang]}
-          </span>
+          <span>{window.content.btn_all_titles[window.lang]}</span>
         </a>
 
       </div>
@@ -60,3 +56,9 @@ class SliderList extends Component {
 }
 
 export default SliderList
+
+// <div className='gridlist-title'>
+//   <span className='gridlist-title-text'>
+//     {window.content.gridlist_title[window.lang]}
+//   </span>
+// </div>

@@ -14,8 +14,11 @@ import Footer from './Footer/Footer'
 import Logo from './Logo/Logo'
 import GridList from './List/GridList/GridList'
 import SliderList from './List/Sliderlist/Sliderlist.js';
-import InfoForm from './InfoForm/InfoForm'
+//import InfoForm from './InfoForm/InfoForm'
 import Popup from './Popup/Popup'
+
+import BannerTop from './BannerTop/BannerTop'
+import Banner from './Banner/Banner'
 
 
 const App = () => {
@@ -34,8 +37,12 @@ const App = () => {
     appClassName = 'app'
     //contentsStyle = { width: '980px'}
     list = <GridList
+
+
+
       data={require("json!../assets/json/categories.json")}
-      text='This is a grid list'
+      text='Best deals today! Titles up to'
+      percentage='60%OFF'
       expanded={false}
       itemCount={8}
     />
@@ -44,7 +51,7 @@ const App = () => {
     //contentsStyle = { width: '100%'}
     list = <SliderList
       data={require("json!../assets/json/categories.json")}
-      text='This is a slider list'
+      text='Hundreds of titles on sale! Big deals up to 60% off!'
       itemCount={16}
     />
   }
@@ -56,9 +63,9 @@ const App = () => {
     <div id='contents' className='#contents, .pageWrap' style={contentsStyle}>
       <div className={appClassName}>
         <Header />
-        <Logo />
+        <BannerTop />
         {list}
-        <InfoForm />
+        <Banner />
         <Footer/>
         <Popup active={false} />
       </div>

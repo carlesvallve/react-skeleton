@@ -11,6 +11,8 @@ class Thumb extends Component {
   constructor(props) {
     super(props)
 
+    console.log('initializing thumb...')
+
     this.path =
       'url(//pics.r18.com/digital/video/' +
       this.props.data.id + '/' +
@@ -38,6 +40,7 @@ class Thumb extends Component {
         className='swiper-slide'
         style={this.style}
         onClick={e => {
+          console.log('clicking on thumb...')
           e.stopPropagation()
           this.props.dispatch(openPopup(this.props.data))
         }}>
@@ -53,6 +56,9 @@ class Thumb extends Component {
         <div className='thumb-play-icon' />
 
         <div className='thumb-info'>
+          <div className='thumb-title'>{this.title}</div>
+          <div className='thumb-name'>{this.actress}</div>
+
           <a
             className='thumb-button'
             href='https://www.r18.com/my/cart/sp/checkout/cid=ipz00703/pid=ipz00703dl6/'
@@ -61,8 +67,6 @@ class Thumb extends Component {
             }}>
             <span>{window.content.getmovie[window.lang]}</span>
           </a>
-          <div className='thumb-title'>{this.title}</div>
-          <div className='thumb-name'>{this.actress}</div>
         </div>
 
       </li>

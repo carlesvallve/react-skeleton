@@ -3,6 +3,70 @@
         "en" : "#1 JAPANESE ADULT WEBSITE",
         "zh" : "＃1日本成人網站"
     },
+
+    "btn_banner_top": {
+        "en" : "FIND THE BEST DEALS , TITLES UP TO 60% OFF >>",
+        "zh" : "FIND THE BEST DEALS , TITLES UP TO 60% OFF >>"
+    },
+    "btn_banner_bottom": {
+        "en" : "FIND THE BEST DEALS , TITLES UP TO 60% OFF >>",
+        "zh" : "FIND THE BEST DEALS , TITLES UP TO 60% OFF >>"
+    },
+    "btn_all_titles": {
+        "en" : "SEE ALL TITLES ON SALE",
+        "zh" : "SEE ALL TITLES ON SALE"
+    },
+    "btn_more_titles": {
+        "en" : "SEE MORE TITLES ON SALE",
+        "zh" : "SEE MORE TITLES ON SALE"
+    },
+    "btn_thumb": {
+      "en" : "GET THIS MOVIE",
+      "zh" : "GET THIS MOVIE"
+    },
+    "btn_popup": {
+      "en" : "GET THIS MOVIE ON SALE NOW",
+      "zh" : "GET THIS MOVIE ON SALE NOW"
+    },
+    "gridlist_title": {
+        "en" : "Best deals today! Titles up to",
+        "zh" : "Best deals today! Titles up to"
+    },
+    "gridlist_percentage": {
+        "en" : "60% OFF",
+        "zh" : "60% OFF"
+    },
+
+    "banner": {
+        "btn_signup": {
+            "en": "NOT A MEMBER YET? SIGN-UP FOR FREE",
+            "zh": "NOT A MEMBER YET? SIGN-UP FOR FREE"
+        },
+        "text_signup": {
+            "en": "Sign-up for free today and get a full free movie",
+            "zh": "Sign-up for free today and get a full free movie"
+        },
+        "items": {
+            "item1": {
+                "en": "HiDef content up to 6,000 kbps",
+                "zh": "喜高清含量高達6000 kbps的"
+            },
+            "item2": {
+                "en": "Streaming & Download",
+                "zh": "流媒體及下載"
+            },
+            "item3": {
+                "en": "100% Secure and confidential",
+                "zh": "100％的安全和保密"
+            },
+            "item4": {
+                "en": "Exclusive content",
+                "zh": "直接從日本獨家利基內容"
+            }
+        }
+    },
+
+
     "categories": {
         "en" : "Best sellers today! All titles at",
         "zh" : "今天的暢銷書！在"
@@ -79,6 +143,6 @@
         "zh" : "Shop 的 FULL"
     }
 
-    
+
 
 }

@@ -129,21 +129,18 @@ body {
 .app {
     font-family: 'museo-sans-rounded', sans-serif;
 
-    color: #2a1a04;
-    background-color: #fcece4;
-    background-image:
-        url('/assets/img/special/landing_pages/042/desktop/bg_top.jpg'),
-        url('/assets/img/special/landing_pages/042/desktop/bg_bottom.jpg');
+    background-image: url('/assets/img/special/hot-sales/bg-top-gradient.png');
     background-repeat: no-repeat;
     background-position: center top, center bottom 70px;
     background-size: contain, contain;
 
-    padding-top: 340px;
-
     max-width: 980px;
     min-width: 748px;
     margin: 0 auto;
-    //box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
+    //padding-top: 22%;
+    margin-top: 55px;
+
+    ////box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
 }
 
 .categories-list {
@@ -158,12 +155,15 @@ body {
 // }
 
  .app.smartphone {
-    background-image: url('/assets/img/special/landing_pages/042/smartphone/bg_top.jpg');
+    background-image: url('/assets/img/special/hot-sales/bg-top-gradient.png');
     background-position: center top;
     background-size: 100%;
 
     max-width: 100%;
     min-width: 100%;
+
+    margin-top: 48px;
+    padding-top: 75%;
 }
 
 .smartphone .categories-list {
@@ -184,7 +184,7 @@ body {
 /* buttons */
 
 .btn-summer
- {
+{
     font-size: 30px;
     font-weight: 700;
     display: inline-block;
@@ -194,7 +194,7 @@ body {
     border: solid 1px #a10033;
     border-bottom-width: 5px;
     border-radius: 3px;
-    background: #ef1c48;
+    background: #ef1c48; // #E72727
     box-shadow: 0 1px 6px 0 rgba(161, 0, 51, .52);
     text-decoration: none;
     cursor: pointer;
@@ -204,6 +204,8 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    text-align: center;
 }
 
 .btn-signup {
@@ -220,6 +222,7 @@ body {
     margin-top: 10px;
     cursor: pointer;
     text-decoration: false;
+    text-align: center;
 }
 
 .smartphone .btn-summer {

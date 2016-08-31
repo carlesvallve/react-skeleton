@@ -15,12 +15,10 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 
-let GridList = ({ dispatch, data, text, itemCount }) => {
-
-  const columns = 4
-  const textButton = itemCount > 8 ? 'See Less' : 'See more'
+let GridList = ({ dispatch, data, text, percentage, itemCount }) => {
 
   var thumbs = [];
+  const columns = 4
   const w = ((90) / columns) - 0.5;
 
   for (var i = 0; i < itemCount; i++) {
@@ -32,6 +30,7 @@ let GridList = ({ dispatch, data, text, itemCount }) => {
 
       <div className='gridlist-title'>
         <span className='gridlist-title-text'>{text}</span>
+        <pan className='gridlist-title-percentage'>{percentage}</pan>
       </div>
 
       <div id='scroller' className='gridlist-scroller'>
@@ -40,15 +39,22 @@ let GridList = ({ dispatch, data, text, itemCount }) => {
         </ul>
       </div>
 
-      <div
+      <a
         className='btn-summer'
+        href='http://www.r18.com/videos/vod/movies/list/id=10000084/pagesize=120/price=all/sort=popular/type=category/page=1/'
         onClick={e => {
+          if (itemCount  <= 8) {
+            e.preventDefault()
+          }
           e.stopPropagation()
-          dispatch(itemCount <= 8 ? refreshList(16) : refreshList(8))
+          dispatch(refreshList(16))
         }}>
-        {textButton}
-      </div>
-
+        {
+          itemCount <= 8 ?
+          window.content.btn_more_titles[window.lang] :
+          window.content.btn_all_titles[window.lang]
+        }
+      </a>
     </div>
   )
 }
@@ -56,3 +62,12 @@ let GridList = ({ dispatch, data, text, itemCount }) => {
 GridList = connect(mapStateToProps, null)(GridList)
 
 export default GridList
+
+// <div
+//   className='btn-summer'
+//   onClick={e => {
+//     e.stopPropagation()
+//     dispatch(itemCount <= 8 ? refreshList(16) : refreshList(8))
+//   }}>
+//   {textButton}
+// </div>

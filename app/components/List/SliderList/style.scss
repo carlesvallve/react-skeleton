@@ -1,16 +1,28 @@
 // smartphone
 
 .smartphone .gridlist-title {
-    margin-bottom: 15px;
-    width: 100%;
+    margin-bottom: 10px;
+    width: 90%;
     text-align: center;
+    display: inline-block;
 }
 
 .smartphone .gridlist-title-text {
     font-size: 16px;
     color: #ef1c48;
-    width: 90%;
     text-align: center;
+    display: inline-block;
+    margin: 0 5px;
+
+}
+
+.smartphone .gridlist-title-percentage {
+    font-size: 16px;
+    color: #ef1c48;
+    text-align: center;
+    display: inline-block;
+    text-shadow: none; //3px 3px 0 #ffa9ce;
+    font-weight: normal;
 }
 
 .smartphone .gridlist-scroller {

@@ -33,9 +33,11 @@ class Popup extends Component {
 
   openPopup() {
     // disable scroll
-    const body = document.body;
-    body.style.overflow = 'hidden';
-    body.style.marginRight = '15px';
+    if (window.platform === 'desktop') {
+      const body = document.body;
+      body.style.overflow = 'hidden';
+      body.style.marginRight = '15px';
+    }
 
     // update video
     if (this.refs.video !== undefined) {
@@ -48,9 +50,11 @@ class Popup extends Component {
 
   closePopup() {
     // enable scroll
-    const body = document.body;
-    body.style.overflow = 'auto';
-    body.style.marginRight = '0';
+    if (window.platform === 'desktop') {
+      const body = document.body;
+      body.style.overflow = 'auto';
+      body.style.marginRight = '0';
+    }
 
     // pause video and record video references
     if (this.refs.video !== undefined) {
@@ -72,8 +76,8 @@ class Popup extends Component {
     const buttonDataRef = '//www.r18.com/videos/vod/movies/detail/-/id=' + this.props.data.id + '/'
     const textTitle = this.props.data.title[window.lang]
     const textActress = this.props.data.actress[window.lang]
-    const textPrice = "¥" + this.props.data.price;
-    const textButton = window.content.getmovieat[window.lang] + ' 50% OFF'
+    const textPrice = "¥" + this.props.data.price
+    const textButton = window.content.btn_popup[window.lang] //getmovieat[window.lang] + ' 50% OFF'
 
     return (
       <div className='popup' style={{ display: this.props.active ? 'block' : 'none' }}>

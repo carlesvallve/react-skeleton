@@ -13,13 +13,38 @@
     font-family: 'museo-sans-rounded', sans-serif;
     color: #2a1a04;
     text-align: center;
-    padding: 10px 0;
+    padding-top: 10px;
+    padding-bottom: 0;
 }
 
 .gridlist-title-text {
     text-align: center;
     vertical-align: middle;
-    font-size: 50px;
+    font-size: 50px; //font-size: 1.6vw;
+    font-weight: 300;
+    margin: 0 15px;
+    margin-left: -10px
+
+    //font-size: 50px;   }
+
+}
+
+@media (max-width: 980px) { /* default below 980px */
+  .gridlist-title-text { font-size: 50px; font-size: 4.5vw; }
+  .gridlist-title-percentage { font-size: 62px; font-size: 4.5vw; }
+}
+
+.gridlist-title-percentage {
+    font-size: 62px; //font-size: 6vw;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-shadow: 3px 3px 0 #ffa9ce;
+
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+
+    margin-top: 0px;
 }
 
 .gridlist-scroller {
