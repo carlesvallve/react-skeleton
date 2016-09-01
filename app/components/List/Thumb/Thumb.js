@@ -20,12 +20,13 @@ class Thumb extends Component {
     this.style = { width: this.props.width }
     this.title = this.props.data.title[window.lang]
     this.actress = this.props.data.actress[window.lang].split(',')[0]
+    this.price = '¥ ' + this.props.data.price;
+    console.log(this.price);
   }
 
   componentDidMount() {
     // get pic element reference
     var pic = this.refs['pic']
-    //console.log(pic);
 
     // resize pic
     const width = pic.offsetWidth;
@@ -54,11 +55,12 @@ class Thumb extends Component {
         </div>
 
         <div className='thumb-play-icon' />
+        <div className='thumb-price-sp'>{this.price}</div>
 
         <div className='thumb-info'>
-          <div className='thumb-title'>{this.title}</div>
           <div className='thumb-name'>{this.actress}</div>
-
+          <div className='thumb-title'>{this.title}</div>
+          <div className='thumb-price'>{this.price}</div>
           <a
             className='thumb-button'
             href='https://www.r18.com/my/cart/sp/checkout/cid=ipz00703/pid=ipz00703dl6/'
