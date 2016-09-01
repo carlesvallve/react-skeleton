@@ -18,7 +18,8 @@
 .thumb-image {
   position: relative;
   overflow: hidden;
-  margin: 5px;
+  margin: 0; //5px;
+  padding: 0;
 }
 
 .thumb-pic {
@@ -172,7 +173,7 @@
 }
 
 .smartphone .thumb-button {
-    font-size: 18px; //22px;
+    font-size: 18px;
     font-weight: 700;
     display: block;
     padding: 8px 5px;
@@ -181,5 +182,4 @@
     border-bottom: solid 3px #a10033;
     background: #ef1c48;
     text-decoration: none;
-    //margin-top: 5px;
 }
