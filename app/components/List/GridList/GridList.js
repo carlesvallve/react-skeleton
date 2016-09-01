@@ -11,19 +11,28 @@ const mapStateToProps = (state, ownProps) => {
     state.gridlist.itemCount = ownProps.itemCount
   }
 
+  //state.gridlist.data = ownProps.data;
+
+  console.log('mapStateToProps', state.gridlist)
   return state.gridlist
 }
 
 
 let GridList = ({ dispatch, data, text, percentage, itemCount }) => {
 
+  if (data === null) {
+    itemCount = 0;
+  }
+
   var thumbs = [];
   const columns = 4
   const w = ((90) / columns) - 0.5;
 
   for (var i = 0; i < itemCount; i++) {
-    thumbs.push(<Thumb key={i} width={w + '%'} data={data[i]} />)
+    thumbs.push(<Thumb key={i} width={w + '%'} data={data.items[i]} />)
   }
+
+  console.log('gridlist: ', itemCount, data);
 
   return (
     <div className='gridlist'>
@@ -47,7 +56,7 @@ let GridList = ({ dispatch, data, text, percentage, itemCount }) => {
             e.preventDefault()
           }
           e.stopPropagation()
-          dispatch(refreshList(16))
+          dispatch(refreshList(16, data))
         }}>
         {
           itemCount <= 8 ?

@@ -2,7 +2,7 @@ module.exports = {
     entry: './app/main.js',
 
     output: {
-        path: './app',
+        path: './sp-splitex/path/to',
         filename: 'bundle.js'
     },
 

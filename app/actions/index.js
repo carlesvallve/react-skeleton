@@ -38,10 +38,12 @@ export const closePopup = () => {
   }
 }
 
-export const refreshList = (itemCount) => {
+export const refreshList = (itemCount, data) => {
+  console.log('refreshing list ', itemCount, data)
   return {
     type: 'LIST_REFRESH',
-    itemCount
+    itemCount,
+    data
   }
 }
 

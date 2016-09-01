@@ -7,26 +7,43 @@
 
 require('../css/stylesheet.scss');
 import React from 'react'
-import { SetLanguage, SetPlatform } from './Utils/Utils'
+import { SetLanguage, SetPlatform, SetData } from './Utils/Utils'
 
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import Logo from './Logo/Logo'
 import GridList from './List/GridList/GridList'
 import SliderList from './List/Sliderlist/Sliderlist.js';
-//import InfoForm from './InfoForm/InfoForm'
 import Popup from './Popup/Popup'
 
 import BannerTop from './BannerTop/BannerTop'
 import Banner from './Banner/Banner'
 
 
-const App = () => {
+import { connect } from 'react-redux'
+import { refreshList } from '../actions'
+
+
+let App = ({ dispatch }) => {
 
   // config application
 
   SetLanguage();
   SetPlatform();
+  SetData (
+    function (data) {
+      // data was retrieved from api
+      dispatch(
+        refreshList(window.platform === 'smartphone' ? 16 : 8, data)
+      )
+    },
+    function () {
+      // something went wrong, so fallback to hardcoded categories
+      // dispatch(
+      //   refreshList(window.platform === 'smartphone' ? 16 : 8, require("json!../assets/json/categories.json"))
+      // )
+    }
+  );
 
 
   // set elements depending on platform
@@ -35,12 +52,8 @@ const App = () => {
 
   if (window.platform === 'desktop' || window.platform === 'tablet') {
     appClassName = 'app'
-    //contentsStyle = { width: '980px'}
     list = <GridList
-
-
-
-      data={require("json!../assets/json/categories.json")}
+      data={null}
       text='Best deals today! Titles up to'
       percentage='60%OFF'
       expanded={false}
@@ -48,9 +61,8 @@ const App = () => {
     />
   } else {
     appClassName = 'app smartphone'
-    //contentsStyle = { width: '100%'}
     list = <SliderList
-      data={require("json!../assets/json/categories.json")}
+      data={null}
       text='Hundreds of titles on sale! Big deals up to 60% off!'
       itemCount={16}
     />
@@ -60,7 +72,7 @@ const App = () => {
   // render application elements
 
   return (
-    <div id='contents' className='#contents, .pageWrap' style={contentsStyle}>
+    <div id='contents' className='#contents, .pageWrap'>
       <div className={appClassName}>
         <Header />
         <BannerTop />
@@ -72,5 +84,7 @@ const App = () => {
     </div>
   )
 }
+
+App = connect()(App)
 
 export default App

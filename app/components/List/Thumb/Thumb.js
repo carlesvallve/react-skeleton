@@ -5,23 +5,25 @@ var ReactDOM = require('react-dom');
 import { connect } from 'react-redux'
 import { openPopup, closePopup } from '../../../actions'
 
+//'http://pics.r18.com/digital/video/1rsdmu00225/1rsdmu00225pl.jpg'
 
 class Thumb extends Component {
 
   constructor(props) {
     super(props)
 
-    console.log('initializing thumb...')
+    //const id = data.content_id;
 
     this.path =
-      'url(//pics.r18.com/digital/video/' +
-      this.props.data.id + '/' +
-      this.props.data.id + 'pl.jpg)'
+      'url(http://pics.r18.com/digital/video/' +
+      this.props.data.content_id + '/' +
+      this.props.data.content_id + 'pl.jpg)'
     this.style = { width: this.props.width }
-    this.title = this.props.data.title[window.lang]
-    this.actress = this.props.data.actress[window.lang].split(',')[0]
+    this.title = this.props.data.title //[window.lang]
+    this.actress = this.props.data.actress //[window.lang].split(',')[0]
     this.price = '¥ ' + this.props.data.price;
-    console.log(this.price);
+
+    console.log(this.path);
   }
 
   componentDidMount() {
@@ -58,7 +60,7 @@ class Thumb extends Component {
         <div className='thumb-price-sp'>{this.price}</div>
 
         <div className='thumb-info'>
-          <div className='thumb-name'>{this.actress}</div>
+          <div className='thumb-name'>{'this.actress'}</div>
           <div className='thumb-title'>{this.title}</div>
           <div className='thumb-price'>{this.price}</div>
           <a

@@ -70,14 +70,16 @@ class Popup extends Component {
       return <div />
     }
 
-    this.videoPath = 'https://kaigaiad.hs.llnwd.net/v1/lp/videos/summer16/' + this.props.data.id + '.mp4';
-    const imgPath = '//pics.r18.com/digital/video/' + this.props.data.id + '/' + this.props.data.id + 'ps.jpg';
-    const buttonLink = '//www.r18.com/videos/vod/movies/detail/-/id=' + this.props.data.id + '/'
-    const buttonDataRef = '//www.r18.com/videos/vod/movies/detail/-/id=' + this.props.data.id + '/'
-    const textTitle = this.props.data.title[window.lang]
-    const textActress = this.props.data.actress[window.lang]
+    //this.videoPath = 'https://kaigaiad.hs.llnwd.net/v1/lp/videos/summer16/' + this.props.data.content_id + '.mp4';
+    this.videoPath = this.props.data.sample
+
+    const imgPath = '//pics.r18.com/digital/video/' + this.props.data.content_id + '/' + this.props.data.content_id + 'ps.jpg';
+    const buttonLink = '//www.r18.com/videos/vod/movies/detail/-/id=' + this.props.data.content_id + '/'
+    const buttonDataRef = '//www.r18.com/videos/vod/movies/detail/-/id=' + this.props.data.content_id + '/'
+    const textTitle = this.props.data.title //[window.lang]
+    const textActress = this.props.data.actress //[window.lang]
     const textPrice = "¥" + this.props.data.price
-    const textButton = window.content.btn_popup[window.lang] //getmovieat[window.lang] + ' 50% OFF'
+    const textButton = window.content.btn_popup[window.lang]
 
     return (
       <div className='popup' style={{ display: this.props.active ? 'block' : 'none' }}>
@@ -104,7 +106,7 @@ class Popup extends Component {
                 <div className="popup-text popup-info">
                   <dd>
                     <p className="title">{textTitle}</p>
-                    <span className="actress-name">{textActress}</span>
+                    <span className="actress-name">{'textActress'}</span>
                     <span className="price">{textPrice}</span>
                     <a className="btn-summer"
                       href={buttonLink}
