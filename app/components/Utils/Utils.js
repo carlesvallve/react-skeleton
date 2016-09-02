@@ -45,10 +45,7 @@ export const SetCookieState = () => {
 
   // get 'il' cookie
   // if ((!<?php echo isset($_COOKIE["il"]) ? 'true' : 'false';?>) && (document.querySelector('.logOut') === null)) {
-  const cookie = getCookie('il');
-  if (document.querySelector('.logOut') !== null) {
-    cookie = null
-  }
+  const cookie = getCookie('il') && document.querySelector('.logOut') === null;
   console.log('>>> cookie: ' + cookie);
 
 
