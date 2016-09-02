@@ -3,21 +3,26 @@ import React, { Component } from 'react'
 import Swiper from 'swiper';
 import Thumb from '../Thumb/Thumb'
 
+import { connect } from 'react-redux'
+import { refreshList } from '../../../actions'
+
+const mapStateToProps = (state, ownProps) => {
+  if (state.gridlist.itemCount === undefined) {
+    state.gridlist.itemCount = ownProps.itemCount
+  }
+
+  return state.gridlist
+}
+
 
 class SliderList extends Component {
 
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
+  // }
 
-    this.thumbs = [];
-    const w = screen.width * 50 / 100;
-
-    for (var i = 0; i < this.props.itemCount; i++) {
-      this.thumbs.push(<Thumb key={i} width={w + 'px'} data={this.props.data[i]} />)
-    }
-  }
-
-  componentDidMount() {
+  componentDidUpdate() {
+    // this happens tight after render
     const swiper = new Swiper('.swiper-container', {
       slidesPerView: 'auto',
       visibilityFullFit: true,
@@ -30,6 +35,21 @@ class SliderList extends Component {
   }
 
   render() {
+    let itemCount = this.props.itemCount;
+    let data = this.props.data;
+    console.log('sliderlist is updating:', data);
+
+    if (data === null) {
+      itemCount = 0;
+    }
+
+    this.thumbs = [];
+    const w = screen.width * 50 / 100;
+
+    for (var i = 0; i < itemCount; i++) {
+      this.thumbs.push(<Thumb key={i} width={w + 'px'} data={data.items[i]} />)
+    }
+
     return (
       <div className='gridlist categories-list'>
 
@@ -55,10 +75,6 @@ class SliderList extends Component {
   }
 }
 
-export default SliderList
+SliderList = connect(mapStateToProps, null)(SliderList)
 
-// <div className='gridlist-title'>
-//   <span className='gridlist-title-text'>
-//     {window.content.gridlist_title[window.lang]}
-//   </span>
-// </div>
+export default SliderList

@@ -5,26 +5,39 @@ var ReactDOM = require('react-dom');
 import { connect } from 'react-redux'
 import { openPopup, closePopup } from '../../../actions'
 
-//'http://pics.r18.com/digital/video/1rsdmu00225/1rsdmu00225pl.jpg'
 
 class Thumb extends Component {
 
   constructor(props) {
     super(props)
 
-    //const id = data.content_id;
+    let data = this.props.data;
+    if (data == null) {
+      data = {
+        title: "",
+        content_id: "",
+        price: ""
+      };
+    }
 
     this.path =
       'url(http://pics.r18.com/digital/video/' +
-      this.props.data.content_id + '/' +
-      this.props.data.content_id + 'pl.jpg)'
-    this.style = { width: this.props.width }
-    this.title = this.props.data.title //[window.lang]
-    this.actress = this.props.data.actress //[window.lang].split(',')[0]
-    this.price = '¥ ' + this.props.data.price;
+      data.content_id + '/' +
+      data.content_id + 'pl.jpg)'
 
-    console.log(this.path);
+    this.style = { width: this.props.width }
+    this.title = data.title //[window.lang]
+
+    this.actress = '';
+    if (data.hasOwnProperty('actress')) {
+      this.actress = data.actress[Object.keys(data.actress)[0]];
+    }
+
+    this.price = data.price === '' ? '' : '¥ ' + data.price;
+
+    //console.log('thumb', this.actress, this.price);
   }
+
 
   componentDidMount() {
     // get pic element reference
@@ -43,7 +56,6 @@ class Thumb extends Component {
         className='swiper-slide'
         style={this.style}
         onClick={e => {
-          console.log('clicking on thumb...')
           e.stopPropagation()
           this.props.dispatch(openPopup(this.props.data))
         }}>
@@ -60,7 +72,7 @@ class Thumb extends Component {
         <div className='thumb-price-sp'>{this.price}</div>
 
         <div className='thumb-info'>
-          <div className='thumb-name'>{'this.actress'}</div>
+          <div className='thumb-name'>{this.actress}</div>
           <div className='thumb-title'>{this.title}</div>
           <div className='thumb-price'>{this.price}</div>
           <a

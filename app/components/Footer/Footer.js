@@ -2,9 +2,9 @@ require('./style.scss');
 import React, { Component } from 'react'
 
 
-const Footer = () => {
+const Footer = ({ style }) => {
   return(
-    <div id="footer--fixed" className="footer--fixed">
+    <div id="footer--fixed" className="footer--fixed" style={style}>
         <div className="footer--fixed-wrap footer--fixed-wrap--black clearfix">
             <div className="footer--fixed-container">
                 <div className="footer--fixed-logo">

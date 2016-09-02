@@ -70,9 +70,7 @@ class Popup extends Component {
       return <div />
     }
 
-    //this.videoPath = 'https://kaigaiad.hs.llnwd.net/v1/lp/videos/summer16/' + this.props.data.content_id + '.mp4';
     this.videoPath = this.props.data.sample
-
     const imgPath = '//pics.r18.com/digital/video/' + this.props.data.content_id + '/' + this.props.data.content_id + 'ps.jpg';
     const buttonLink = '//www.r18.com/videos/vod/movies/detail/-/id=' + this.props.data.content_id + '/'
     const buttonDataRef = '//www.r18.com/videos/vod/movies/detail/-/id=' + this.props.data.content_id + '/'

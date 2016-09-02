@@ -1,5 +1,10 @@
 
 /* replicate server's special pages css environment */
+
+#contents:after {
+   content: '';
+}
+
 .mainWrap {
     top: 0;
     left: 0;
@@ -137,10 +142,8 @@ body {
     max-width: 980px;
     min-width: 748px;
     margin: 0 auto;
-    //padding-top: 22%;
-    margin-top: 55px;
 
-    ////box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
+    //margin-top: 55px;
 }
 
 .categories-list {
@@ -162,7 +165,7 @@ body {
     max-width: 100%;
     min-width: 100%;
 
-    margin-top: 48px;
+    //margin-top: 48px;
     padding-top: 75%;
 }
 
@@ -240,62 +243,3 @@ body {
 .u-fColor--deepred {
     color: #6b0934 !important;
 }
-
-
-// body {
-//     margin: 0;
-//     padding: 0;
-//     list-style: none;
-//     text-decoration: none;
-//     border: none;
-//     outline: none;
-// }
-//
-// blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, th, ul {
-//     margin: 0;
-//     padding: 0;
-// }
-//
-// *, a, button, input, select, textarea {
-//     -webkit-tap-highlight-color: transparent;
-// }
-//
-// #root {
-//     display: block;
-//     position: relative;
-//     padding: 0;
-//     margin: 0 auto;
-//     box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
-//
-//     width: 100%;
-//     height: same-as-width;
-//     max-width: 980px;
-//     min-width: 768px;
-//
-//     font-family: 'museo-sans-rounded', sans-serif;
-//     color: #2a1a04;
-//     background-color: #fcece4;
-// }
-//
-// .btn-summer
-//  {
-//     font-size: 30px;
-//     font-weight: 700;
-//     display: inline-block;
-//     padding: 4px 10px;
-//     letter-spacing: -.9px;
-//     color: #fff;
-//     border: solid 1px #a10033;
-//     border-bottom-width: 5px;
-//     border-radius: 3px;
-//     background: #ef1c48;
-//     box-shadow: 0 1px 6px 0 rgba(161, 0, 51, .52);
-//     text-decoration: none;
-//     cursor: pointer;
-//     min-width: 300px;
-//
-//     -webkit-user-select: none;
-//     -moz-user-select: none;
-//     -ms-user-select: none;
-//     user-select: none;
-// }

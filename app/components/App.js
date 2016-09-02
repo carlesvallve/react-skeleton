@@ -1,24 +1,16 @@
-//import AddTodo from '../containers/AddTodo'
-//import VisibleTodoList from '../containers/VisibleTodoList'
-//import Footer from './Footer'
-// <AddTodo />
-// <VisibleTodoList />
-// <Footer />
+require('./style.scss');
 
-require('../css/stylesheet.scss');
 import React from 'react'
-import { SetLanguage, SetPlatform, SetData } from './Utils/Utils'
+import { SetLanguage, SetPlatform, SetCookieState, SetData } from './Utils/Utils'
 
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
-import Logo from './Logo/Logo'
+
 import GridList from './List/GridList/GridList'
 import SliderList from './List/Sliderlist/Sliderlist.js';
 import Popup from './Popup/Popup'
-
 import BannerTop from './BannerTop/BannerTop'
-import Banner from './Banner/Banner'
-
+import BannerBottom from './BannerBottom/BannerBottom'
 
 import { connect } from 'react-redux'
 import { refreshList } from '../actions'
@@ -30,7 +22,8 @@ let App = ({ dispatch }) => {
 
   SetLanguage();
   SetPlatform();
-  SetData (
+
+  SetData (16,
     function (data) {
       // data was retrieved from api
       dispatch(
@@ -71,14 +64,16 @@ let App = ({ dispatch }) => {
 
   // render application elements
 
+  var fixedStyles = SetCookieState();
+
   return (
     <div id='contents' className='#contents, .pageWrap'>
-      <div className={appClassName}>
-        <Header />
+      <div id='app' className={appClassName}>
+        <Header style={fixedStyles.header} />
         <BannerTop />
         {list}
-        <Banner />
-        <Footer/>
+        <BannerBottom />
+        <Footer style={fixedStyles.footer} />
         <Popup active={false} />
       </div>
     </div>

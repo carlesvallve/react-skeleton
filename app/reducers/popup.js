@@ -1,6 +1,3 @@
-
-// ============================================
-
 const popup = (state = {}, action) => {
   switch (action.type) {
 
@@ -22,7 +19,3 @@ const popup = (state = {}, action) => {
 }
 
 export default popup
-
-
-
-// ============================================

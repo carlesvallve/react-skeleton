@@ -11,14 +11,12 @@ const mapStateToProps = (state, ownProps) => {
     state.gridlist.itemCount = ownProps.itemCount
   }
 
-  //state.gridlist.data = ownProps.data;
-
-  console.log('mapStateToProps', state.gridlist)
   return state.gridlist
 }
 
 
 let GridList = ({ dispatch, data, text, percentage, itemCount }) => {
+  console.log('gridlist is updating:', data);
 
   if (data === null) {
     itemCount = 0;
@@ -31,8 +29,6 @@ let GridList = ({ dispatch, data, text, percentage, itemCount }) => {
   for (var i = 0; i < itemCount; i++) {
     thumbs.push(<Thumb key={i} width={w + '%'} data={data.items[i]} />)
   }
-
-  console.log('gridlist: ', itemCount, data);
 
   return (
     <div className='gridlist'>
@@ -71,12 +67,3 @@ let GridList = ({ dispatch, data, text, percentage, itemCount }) => {
 GridList = connect(mapStateToProps, null)(GridList)
 
 export default GridList
-
-// <div
-//   className='btn-summer'
-//   onClick={e => {
-//     e.stopPropagation()
-//     dispatch(itemCount <= 8 ? refreshList(16) : refreshList(8))
-//   }}>
-//   {textButton}
-// </div>

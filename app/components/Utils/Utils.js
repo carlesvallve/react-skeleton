@@ -32,21 +32,127 @@ export const SetPlatform = () => {
 }
 
 
-export const SetData = (cb, err) => {
+export const SetCookieState = () => {
+  // get cookie by name
+  function getCookie(name) {
+    function escape(s) {
+        return s.replace(/([.*+?\^${}()|\[\]\/\\])/g, '\\$1');
+    };
+    var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+    return match ? match[1] : null;
+  }
+
+
+  // get 'il' cookie
+  // if ((!<?php echo isset($_COOKIE["il"]) ? 'true' : 'false';?>) && (document.querySelector('.logOut') === null)) {
+  const cookie = getCookie('il');
+  if (document.querySelector('.logOut') !== null) {
+    cookie = null
+  }
+  console.log('>>> cookie: ' + cookie);
+
+
+  // modify native header and footer
+
+  if (cookie === null) {
+    if (window.platform === 'desktop') {
+      document.querySelector('.gDef').style.display = 'block';
+      document.querySelector('#hd-sec-middle').style.display = 'none';
+      document.querySelector('#hd-sec-bottom').style.display = 'none';
+      document.querySelector('#contents').style.padding = '40px 0 110px 0';
+      setTimeout(function() {
+        document.querySelector('#footer').style.display = 'block';
+        document.querySelector('#footer').style.height = '110px';
+        document.querySelector('#footer').style['margin-top'] = '-110px';
+        document.querySelector('#footer .inner01').style.display = 'none';
+        document.querySelector('.ft-list-nav02').style.display = 'none';
+      }, 1000);
+    } else {
+      document.querySelector('.mainWrap > header').style.display = 'none';
+      setTimeout(function() {
+        document.querySelector('.mainWrap > footer').style.display = 'none';
+      }, 1000);
+
+    }
+  }
+
+
+  // modify root styles and custom header and footer
+
+  var root = document.getElementById('root');
+  var fixedStyles;
+
+  if (cookie || window.platform === 'desktop') {
+    // displaying normal dmm
+    if (window.platform === 'desktop') {
+      root.style.marginTop = '-2px';
+      root.style.paddingBottom = cookie ? '370px' : '0';
+    } else {
+      root.style.paddingTop = '78px';
+      root.style.marginBottom = '-1px';
+    }
+
+    fixedStyles = {
+      header: { display: 'none' },
+      footer: { display: 'none' }
+    };
+
+  } else {
+    if (window.platform === 'desktop') {
+      root.style.marginTop = '-2px';
+      root.style.paddingBottom = '0';
+    } else {
+      root.style.marginTop = '48px';
+      root.style.paddingBottom = '0';
+    }
+
+    fixedStyles = {
+      header: { display: 'block' },
+      footer: { display: 'block' }
+    };
+  }
+
+  return fixedStyles;
+}
+
+
+export const SetData = (itemCount, cb, err) => {
   var params = {
     'price':'sale',
     'sort':'new',
     'page':1,
-    'pagesize':16,
+    'pagesize':64,
     'floor':'movies',
     'service':'videos',
     'type':'category',
     'id':6565,
     'lang':'en',
-    'unit':'USD',
+    'unit':'EUR',
     'device':'mobile',
     'content_id':6565
   };
+
+
+  // iterate data and make sure to return N items with all required params
+
+  function correctDataItems(_items) {
+    console.log('correcting data...', itemCount);
+    let items = [];
+
+    for (let i = 0; i < _items.length; i++) {
+      if (Object.keys(_items[i].actress).length === 0 || _items[i].sample === null) {
+        continue;
+      }
+
+      items.push(_items[i]);
+      if (items.length === itemCount) {
+        return items;
+      }
+    }
+
+    console.warn('correct data could not be completed');
+    return _items;
+  }
 
   // $.ajax({
   // 	url: '/api/v1/content/list/',
@@ -138,22 +244,14 @@ export const SetData = (cb, err) => {
     'POST',
     xparams(params),
 
-    // callback jandler
+    // callback handler
     function(data) {
       // convert string to object
       data = JSON.parse(data);
 
-      var html = '';
-
       if (data.hasOwnProperty('items') && data.items.length > 0) {
-
-        // ALL OTHER OPTIONS ARE PRODUCT LIST
-        // for(i = 0; i < data.items.length; i++) {
-        //   html += '<li><a href=""><img src="' + data.items[i].image.medium + '"></a></li>';
-        // }
-        //document.getElementById('somediv').innerHTML = html; //.append(html).slideDown();
-
-        console.log('data from api:', data);
+        //console.log('data from api:', data);
+        data.items = correctDataItems(data.items);
         cb(data);
       }
     },
