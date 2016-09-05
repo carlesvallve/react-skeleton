@@ -17,10 +17,6 @@ const mapStateToProps = (state, ownProps) => {
 
 class SliderList extends Component {
 
-  // constructor(props) {
-  //   super(props);
-  // }
-
   componentDidUpdate() {
     // this happens tight after render
     const swiper = new Swiper('.swiper-container', {
@@ -37,7 +33,7 @@ class SliderList extends Component {
   render() {
     let itemCount = this.props.itemCount;
     let data = this.props.data;
-    console.log('sliderlist is updating:', data);
+    //console.log('sliderlist is updating:', data);
 
     if (data === null) {
       itemCount = 0;

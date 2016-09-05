@@ -75,7 +75,12 @@ class Popup extends Component {
     const buttonLink = '//www.r18.com/videos/vod/movies/detail/-/id=' + this.props.data.content_id + '/'
     const buttonDataRef = '//www.r18.com/videos/vod/movies/detail/-/id=' + this.props.data.content_id + '/'
     const textTitle = this.props.data.title //[window.lang]
-    const textActress = this.props.data.actress //[window.lang]
+
+    let textActress = '';
+    if (this.props.data.hasOwnProperty('actress')) {
+      textActress = this.props.data.actress[Object.keys(this.props.data.actress)[0]];
+    }
+
     const textPrice = "¥" + this.props.data.price
     const textButton = window.content.btn_popup[window.lang]
 
@@ -104,7 +109,7 @@ class Popup extends Component {
                 <div className="popup-text popup-info">
                   <dd>
                     <p className="title">{textTitle}</p>
-                    <span className="actress-name">{'textActress'}</span>
+                    <span className="actress-name">{textActress}</span>
                     <span className="price">{textPrice}</span>
                     <a className="btn-summer"
                       href={buttonLink}

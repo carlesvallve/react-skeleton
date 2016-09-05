@@ -8,9 +8,12 @@ import todoApp from './reducers'
 import App from './components/App'
 
 
-let store = createStore(todoApp) //, initialState
+// how to build outputs:
+// dev        -> webpack -p; sp-splitex/sp-splitex.sh;
+// production -> npm run build-production; sp-splitex/sp-splitex.sh;
 
-console.log('Initializing main...')
+
+let store = createStore(todoApp) //, initialState
 
 render(
   <Provider store={store}>
