@@ -107,7 +107,7 @@ a:hover, a:visited, a:link, a:active {
 
     margin: 0 auto;
     text-align: left;
-    box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
+    box-shadow: none; //0 0 8px 1px rgba(25,25,25,.3);
     background: -webkit-linear-gradient(top,#fff,#f0f0f0);
     background: -moz-linear-gradient(top,#fff,#f0f0f0);
     background: linear-gradient(top,#fff,#f0f0f0);
@@ -139,6 +139,8 @@ body {
     max-width: 980px;
     min-width: 980px;
     margin: 0 auto;
+
+    box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
 
     //margin-top: 55px;
 }

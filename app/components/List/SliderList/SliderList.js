@@ -33,6 +33,8 @@ class SliderList extends Component {
   render() {
     let itemCount = this.props.itemCount;
     let data = this.props.data;
+    const text = this.props.text
+    const percentage = this.props.percentage
     //console.log('sliderlist is updating:', data);
 
     if (data === null) {
@@ -56,8 +58,8 @@ class SliderList extends Component {
         </div>
 
         <div className='gridlist-title'>
-          <span className='gridlist-title-text'>{window.content.gridlist_title[window.lang]}</span>
-          <span className='gridlist-title-percentage'>{window.content.gridlist_percentage[window.lang]}</span>
+          <span className='gridlist-title-text'>{text}</span>
+          <span className='gridlist-title-percentage'>{percentage}</span>
         </div>
 
         <a

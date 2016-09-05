@@ -47,8 +47,8 @@ let App = ({ dispatch }) => {
     appClassName = window.platform === 'tablet' ? 'app tablet' : 'app'
     list = <GridList
       data={null}
-      text='Best deals today! Titles up to'
-      percentage='60%OFF'
+      text={window.content.gridlist_title[window.lang]}
+      percentage={window.content.list_percentage[window.lang]}
       expanded={false}
       itemCount={8}
     />
@@ -56,7 +56,8 @@ let App = ({ dispatch }) => {
     appClassName = 'app smartphone'
     list = <SliderList
       data={null}
-      text='Hundreds of titles on sale! Big deals up to 60% off!'
+      text={window.content.sliderlist_title[window.lang]}
+      percentage={window.content.list_percentage[window.lang]}
       itemCount={16}
     />
   }
@@ -83,3 +84,6 @@ let App = ({ dispatch }) => {
 App = connect()(App)
 
 export default App
+
+//text={window.content.sliderlist_title[window.lang]}
+//percentage={window.content.list_percentage[window.lang]}

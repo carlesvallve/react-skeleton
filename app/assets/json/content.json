@@ -32,7 +32,11 @@
         "en" : "Best deals today! Titles up to",
         "zh" : "Best deals today! Titles up to"
     },
-    "gridlist_percentage": {
+    "sliderlist_title": {
+        "en" : "Hundreds of titles on sale! Big deals up to",
+        "zh" : "Hundreds of titles on sale! Big deals up to"
+    },
+    "list_percentage": {
         "en" : "60% OFF",
         "zh" : "60% OFF"
     },
