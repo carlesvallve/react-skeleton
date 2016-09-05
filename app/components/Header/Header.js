@@ -7,7 +7,7 @@ const Header = ({ style }) => {
     <div className="header--fixed" style={style}>
         <div className="header-container">
             <div className="header-logo">
-                <img src="/assets/img/special/landing_pages/modules/logos/R18-logo.png" alt="" />
+                <img src="/assets/img/special/hot-sales/logos/R18-logo.png" alt="" />
             </div>
             <p className="no1txt">{window.content.header[window.lang]}</p>
             <a className="btn-signup"

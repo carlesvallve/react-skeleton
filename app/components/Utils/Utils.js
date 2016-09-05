@@ -55,23 +55,29 @@ export const SetCookieState = () => {
 
   if (cookie === null) {
     if (window.platform === 'desktop') {
-      document.querySelector('.gDef').style.display = 'block';
-      document.querySelector('#hd-sec-middle').style.display = 'none';
-      document.querySelector('#hd-sec-bottom').style.display = 'none';
-      document.querySelector('#contents').style.padding = '40px 0 110px 0';
-      setTimeout(function() {
-        document.querySelector('#footer').style.display = 'block';
-        document.querySelector('#footer').style.height = '110px';
-        document.querySelector('#footer').style['margin-top'] = '-110px';
-        document.querySelector('#footer .inner01').style.display = 'none';
-        document.querySelector('.ft-list-nav02').style.display = 'none';
-      }, 1000);
+      const gDef = document.querySelector('.gDef');
+      console.log(gDef);
+      if (gDef !== null) {
+        gDef.style.display = 'block';
+        document.querySelector('#hd-sec-middle').style.display = 'none';
+        document.querySelector('#hd-sec-bottom').style.display = 'none';
+        document.querySelector('#contents').style.padding = '40px 0 110px 0';
+        setTimeout(function() {
+          document.querySelector('#footer').style.display = 'block';
+          document.querySelector('#footer').style.height = '110px';
+          document.querySelector('#footer').style['margin-top'] = '-110px';
+          document.querySelector('#footer .inner01').style.display = 'none';
+          document.querySelector('.ft-list-nav02').style.display = 'none';
+        }, 1000);
+      }
     } else {
-      document.querySelector('.mainWrap > header').style.display = 'none';
-      setTimeout(function() {
-        document.querySelector('.mainWrap > footer').style.display = 'none';
-      }, 1000);
-
+      const mainWrap = document.querySelector('.mainWrap');
+      if (mainWrap !== null) {
+        document.querySelector('.mainWrap > header').style.display = 'none';
+        setTimeout(function() {
+          document.querySelector('.mainWrap > footer').style.display = 'none';
+        }, 1000);
+      }
     }
   }
 
