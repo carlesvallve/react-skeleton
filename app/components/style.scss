@@ -114,9 +114,6 @@ a:hover, a:visited, a:link, a:active {
 
     display: block;
     min-height: 1%;
-
-    max-width: 980px;
-    //min-width: 748px;
 }
 
 // desktop
@@ -140,22 +137,26 @@ body {
     background-size: contain, contain;
 
     max-width: 980px;
-    min-width: 748px;
+    min-width: 980px;
     margin: 0 auto;
 
     //margin-top: 55px;
 }
 
+
 .categories-list {
     margin-top: 340px;
 }
 
+// tablet
+
+.app.tablet {
+  max-width: 100%;
+  min-width: 100%;
+}
+
 
 // smartphone
-
-// #contents.smartphone {
-//     width: 100%;
-// }
 
  .app.smartphone {
     background-image: url('/assets/img/special/hot-sales/bg-top-gradient.png');
@@ -165,7 +166,6 @@ body {
     max-width: 100%;
     min-width: 100%;
 
-    //margin-top: 48px;
     padding-top: 75%;
 }
 

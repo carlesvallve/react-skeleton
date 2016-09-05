@@ -31,7 +31,7 @@ let App = ({ dispatch }) => {
       )
     },
     function () {
-      // something went wrong, so fallback to hardcoded categories
+      // something went wrong, maybe we should fallback to hardcoded categories (?)
       // dispatch(
       //   refreshList(window.platform === 'smartphone' ? 16 : 8, require("json!../assets/json/categories.json"))
       // )
@@ -44,7 +44,7 @@ let App = ({ dispatch }) => {
   let list, appClassName, contentsStyle;
 
   if (window.platform === 'desktop' || window.platform === 'tablet') {
-    appClassName = 'app'
+    appClassName = window.platform === 'tablet' ? 'app tablet' : 'app'
     list = <GridList
       data={null}
       text='Best deals today! Titles up to'

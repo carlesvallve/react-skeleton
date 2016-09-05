@@ -20,22 +20,14 @@
 .gridlist-title-text {
     text-align: center;
     vertical-align: middle;
-    font-size: 50px; //font-size: 1.6vw;
+    font-size: 50px;
     font-weight: 300;
     margin: 0 15px;
     margin-left: -10px
-
-    //font-size: 50px;   }
-
-}
-
-@media (max-width: 980px) { /* default below 980px */
-  .gridlist-title-text { font-size: 50px; font-size: 4.5vw; }
-  .gridlist-title-percentage { font-size: 62px; font-size: 4.5vw; }
 }
 
 .gridlist-title-percentage {
-    font-size: 62px; //font-size: 6vw;
+    font-size: 62px;
     font-weight: 900;
     letter-spacing: -1px;
     text-shadow: 3px 3px 0 #ffa9ce;
@@ -59,4 +51,15 @@
     text-align: center;
     display:inline-block;
     margin-bottom: 25px;
+}
+
+
+// tablet
+
+.tablet .gridlist-title-text {
+  font-size: 40px;
+}
+
+.tablet .gridlist-title-percentage {
+  font-size: 52px;
 }

@@ -16,13 +16,13 @@
 }
 
 .banner-top-button {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 700;
   display: inline-block;
   padding: 4px 10px;
   letter-spacing: -.9px;
   color: #fff;
-  border: solid 1px #B70000; //#a10033;
+  border: solid 1px #B70000;
   border-width: 2px;
   border-radius: 3px;
 
@@ -43,76 +43,4 @@
   margin-left: 20px;
   margin-top: 42%;
   margin-bottom: 20px;
-}
-
-.banner-features {
-  text-align: center;
-  width: 100%;
-  margin-top: -65%;
-}
-
-.featurelist {
-  margin: 0 auto;
-}
-
-.banner-featurelist li {
-  font-family: 'proxima-nova', 'Proxima Nova', 'helvetica-neue', helvetica, arial, sans-serif;
-  font-weight: normal;
-  color: white;
-  font-size: 16px;
-
-  display: inline-block;
-  margin: 0 10px;
-  padding: 11px 0 11px 35px;
-
-  background-repeat: no-repeat;
-  background-position: center left;
-}
-
-@media (max-width: 980px) { /* default below 980px */
-  .banner-featurelist li { font-size: 16px; font-size: 1.6vw; }
-}
-
-.banner-featurelist li:nth-child(1) {
-  background-image: url('/assets/img/special/landing_pages/042/ico-hd.svg');
-}
-
-.banner-featurelist li:nth-child(2) {
-  background-image: url('/assets/img/special/landing_pages/042/ico-download.svg');
-}
-
-.banner-featurelist li:nth-child(3) {
-  background-image: url('/assets/img/special/landing_pages/042/ico-padlock.svg');
-}
-
-.banner-featurelist li:nth-child(4) {
-  background-image: url('/assets/img/special/landing_pages/042/ico-heart.svg');
-}
-
-
-.banner-signup {
-  text-align: center;
-  width: 100%;
-  margin-top: 37%;
-}
-
-.banner-btn-signup {
-  display: block;
-  margin: 5px auto;
-}
-
-.banner-text-signup {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  color: #2C2C2C;
-  width: 100%;
-  text-shadow: 1px 1px white;
-}
-
-
-// smartphone
-
-.smartphone .banner {
-  display: none;
 }

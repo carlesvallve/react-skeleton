@@ -32,6 +32,8 @@ export const SetPlatform = () => {
 }
 
 
+// Modify site styles depending on cookie / login / platform
+
 export const SetCookieState = () => {
   // get cookie by name
   function getCookie(name) {
@@ -113,6 +115,8 @@ export const SetCookieState = () => {
 }
 
 
+// Call API to retrieve site data
+
 export const SetData = (itemCount, cb, err) => {
   var params = {
     'price':'sale',
@@ -173,7 +177,6 @@ export const SetData = (itemCount, cb, err) => {
   //     	console.log('something went wrong');
   //     }
   // });
-
 
 
   // keep this as separate function for later refactor
