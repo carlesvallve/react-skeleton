@@ -1,6 +1,17 @@
 <script src="https://use.typekit.net/iyf1gbt.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
+<script>
+  // get current currency
+
+  <?php
+  // calculate prices in current currency
+  $current_currency = \Common\Library\R18\Exchange::init_current_currency();
+  ?>
+  window.currency = <?php echo "'$current_currency'"; ?>;
+  console.log('>>> currency: ', window.currency);
+</script>
+
 <div id="root"></div>
 
 <script>

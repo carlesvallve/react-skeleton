@@ -19,7 +19,7 @@ const BannerBottom = () => {
         <div className='banner-bottom-signup'>
           <a
             className='banner-bottom-btn-signup btn-summer'
-            href='http://www.r18.com/videos/vod/movies/list/id=10000084/pagesize=120/price=all/sort=popular/type=category/page=1/'
+            href='https://www.r18.com/my/register/'
           >
             <span>{window.content.banner.btn_signup[window.lang]}</span>
           </a>

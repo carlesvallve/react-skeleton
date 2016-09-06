@@ -125,13 +125,12 @@ body {
     text-decoration: none;
     border: none;
     outline: none;
-    //text-align: center;
 }
 
 .app {
     font-family: 'museo-sans-rounded', sans-serif;
 
-    background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient.png');
+    background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-en.png');
     background-repeat: no-repeat;
     background-position: center top, center bottom 70px;
     background-size: contain, contain;
@@ -141,10 +140,15 @@ body {
     margin: 0 auto;
 
     box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
-
-    //margin-top: 55px;
 }
 
+.app.en {
+  background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-en.png');
+}
+
+.app.zh {
+  background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-zh.png');
+}
 
 .categories-list {
     margin-top: 340px;
@@ -161,7 +165,7 @@ body {
 // smartphone
 
  .app.smartphone {
-    background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient.png');
+    background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-en.png');
     background-position: center top;
     background-size: 100%;
 
@@ -169,6 +173,14 @@ body {
     min-width: 100%;
 
     padding-top: 75%;
+}
+
+.app.smartphone.en {
+  background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-en.png');
+}
+
+.app.smartphone.zh {
+  background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-zh.png');
 }
 
 .smartphone .categories-list {

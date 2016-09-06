@@ -133,8 +133,8 @@ export const SetData = (itemCount, cb, err) => {
     'service':'videos',
     'type':'category',
     'id':6565,
-    'lang':'en',
-    'unit':'EUR',
+    'lang': window.lang,      // 'en'
+    'unit': window.currency,  // 'EUR'
     'device':'mobile',
     'content_id':6565
   };
@@ -256,7 +256,6 @@ export const SetData = (itemCount, cb, err) => {
       data = JSON.parse(data);
 
       if (data.hasOwnProperty('items') && data.items.length > 0) {
-        //console.log('data from api:', data);
         data.items = correctDataItems(data.items);
         cb(data);
       }

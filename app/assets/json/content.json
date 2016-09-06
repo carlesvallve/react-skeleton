@@ -6,66 +6,66 @@
 
     "btn_banner_top": {
         "en" : "FIND THE BEST DEALS , TITLES UP TO 60% OFF >>",
-        "zh" : "FIND THE BEST DEALS , TITLES UP TO 60% OFF >>"
+        "zh" : "快來看眾多熱門影片最高60%折扣 >>"
     },
     "btn_banner_bottom": {
         "en" : "FIND THE BEST DEALS , TITLES UP TO 60% OFF >>",
-        "zh" : "FIND THE BEST DEALS , TITLES UP TO 60% OFF >>"
-    },
-    "btn_all_titles": {
-        "en" : "SEE ALL TITLES ON SALE",
-        "zh" : "SEE ALL TITLES ON SALE"
+        "zh" : "快來看眾多熱門影片最高60%折扣 OFF >>"
     },
     "btn_more_titles": {
         "en" : "SEE MORE TITLES ON SALE",
-        "zh" : "SEE MORE TITLES ON SALE"
+        "zh" : "看更多特價中的影片"
+    },
+    "btn_all_titles": {
+        "en" : "SEE ALL TITLES ON SALE",
+        "zh" : "看完整特價影片清單"
     },
     "btn_thumb": {
       "en" : "GET THIS MOVIE",
-      "zh" : "GET THIS MOVIE"
+      "zh" : "免費拿片去"
     },
     "btn_popup": {
       "en" : "GET THIS MOVIE ON SALE NOW",
-      "zh" : "GET THIS MOVIE ON SALE NOW"
+      "zh" : "馬上拿免費完整影片"
     },
     "gridlist_title": {
         "en" : "Best deals today! Titles up to",
-        "zh" : "Best deals today! Titles up to"
+        "zh" : "今日最省! 眾多熱門影片最高"
     },
     "sliderlist_title": {
-        "en" : "Hundreds of titles on sale! Big deals up to",
-        "zh" : "Hundreds of titles on sale! Big deals up to"
+        "en" : "Hundreds of titles on sale! Up to",
+        "zh" : "上百部影片特價中! 最高60%折扣!"
     },
     "list_percentage": {
         "en" : "60% OFF",
-        "zh" : "60% OFF"
+        "zh" : "60%折扣"
     },
 
     "banner": {
         "btn_signup": {
             "en": "NOT A MEMBER YET? SIGN-UP FOR FREE",
-            "zh": "NOT A MEMBER YET? SIGN-UP FOR FREE"
+            "zh": "還不是會員? 現在馬上免費註冊"
         },
         "text_signup": {
             "en": "Sign-up for free today and get a full free movie",
-            "zh": "Sign-up for free today and get a full free movie"
+            "zh": "現在註冊 立即拿一部免費完整影片"
         },
         "items": {
             "item1": {
                 "en": "HiDef content up to 6,000 kbps",
-                "zh": "喜高清含量高達6000 kbps的"
+                "zh": "最高畫質6,000 kbps清晰影片"
             },
             "item2": {
                 "en": "Streaming & Download",
-                "zh": "流媒體及下載"
+                "zh": "線上串流 & 下載"
             },
             "item3": {
                 "en": "100% Secure and confidential",
-                "zh": "100％的安全和保密"
+                "zh": "100% 安全且隱密"
             },
             "item4": {
                 "en": "Exclusive content",
-                "zh": "直接從日本獨家利基內容"
+                "zh": "獨家內容"
             }
         }
     },

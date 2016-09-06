@@ -64,7 +64,8 @@ class SliderList extends Component {
 
         <a
           className='btn-summer'
-          href='http://www.r18.com/videos/vod/movies/list/id=10000084/pagesize=120/price=all/sort=popular/type=category/page=1'>
+          href = 'http://www.r18.com/common/search/price_max=sale/'
+        >
           <span>{window.content.btn_all_titles[window.lang]}</span>
         </a>
 

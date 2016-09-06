@@ -81,7 +81,7 @@ class Popup extends Component {
       textActress = this.props.data.actress[Object.keys(this.props.data.actress)[0]];
     }
 
-    const textPrice = "¥" + this.props.data.price
+    const textPrice = this.props.data.price_local + ' ' + window.currency
     const textButton = window.content.btn_popup[window.lang]
 
     return (

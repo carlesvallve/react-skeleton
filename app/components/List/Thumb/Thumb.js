@@ -33,9 +33,8 @@ class Thumb extends Component {
       this.actress = data.actress[Object.keys(data.actress)[0]];
     }
 
-    this.price = data.price === '' ? '' : '¥ ' + data.price;
-
-    //console.log('thumb', this.actress, this.price);
+    this.price = data.price_local === '' ? '' : data.price_local + ' ' + window.currency;
+    this.buttonLink = '//www.r18.com/videos/vod/movies/detail/-/id=' + data.content_id + '/'
   }
 
 
@@ -77,7 +76,7 @@ class Thumb extends Component {
           <div className='thumb-price'>{this.price}</div>
           <a
             className='thumb-button'
-            href='https://www.r18.com/my/cart/sp/checkout/cid=ipz00703/pid=ipz00703dl6/'
+            href={this.buttonLink}
             onClick={e => {
               e.stopPropagation()
             }}>

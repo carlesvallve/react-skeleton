@@ -46,7 +46,7 @@ let GridList = ({ dispatch, data, text, percentage, itemCount }) => {
 
       <a
         className='btn-summer'
-        href='http://www.r18.com/videos/vod/movies/list/id=10000084/pagesize=120/price=all/sort=popular/type=category/page=1/'
+        href = 'http://www.r18.com/common/search/price_max=sale/'
         onClick={e => {
           if (itemCount  <= 8) {
             e.preventDefault()

@@ -27,14 +27,20 @@ let App = ({ dispatch }) => {
     function (data) {
       // data was retrieved from api
       dispatch(
-        refreshList(window.platform === 'smartphone' ? 16 : 8, data)
+        refreshList(
+          window.platform === 'smartphone' ? 16 : 8,
+          data
+        )
       )
     },
     function () {
       // something went wrong, maybe we should fallback to hardcoded categories (?)
-      // dispatch(
-      //   refreshList(window.platform === 'smartphone' ? 16 : 8, require("json!../assets/json/categories.json"))
-      // )
+      dispatch(
+        refreshList(
+          window.platform === 'smartphone' ? 16 : 8,
+          require("json!../assets/json/categories.json")
+        )
+      )
     }
   );
 
@@ -44,7 +50,11 @@ let App = ({ dispatch }) => {
   let list, appClassName, contentsStyle;
 
   if (window.platform === 'desktop' || window.platform === 'tablet') {
-    appClassName = window.platform === 'tablet' ? 'app tablet' : 'app'
+    appClassName =
+    window.platform === 'tablet' ?
+    'app tablet ' + window.lang :
+    'app ' + window.lang
+
     list = <GridList
       data={null}
       text={window.content.gridlist_title[window.lang]}
@@ -53,7 +63,7 @@ let App = ({ dispatch }) => {
       itemCount={8}
     />
   } else {
-    appClassName = 'app smartphone'
+    appClassName = 'app smartphone ' + window.lang
     list = <SliderList
       data={null}
       text={window.content.sliderlist_title[window.lang]}
@@ -84,6 +94,3 @@ let App = ({ dispatch }) => {
 App = connect()(App)
 
 export default App
-
-//text={window.content.sliderlist_title[window.lang]}
-//percentage={window.content.list_percentage[window.lang]}
