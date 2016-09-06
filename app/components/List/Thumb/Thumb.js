@@ -47,6 +47,9 @@ class Thumb extends Component {
     const height = width * 1.42;
     pic.style.width = width + 'px';
     pic.style.height = height + 'px';
+
+    //this.props.height = height + 'px';
+    window.thumbHeight = height + 74;
   }
 
   render() {

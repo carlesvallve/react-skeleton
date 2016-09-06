@@ -8,7 +8,7 @@
   // calculate prices in current currency
   $current_currency = \Common\Library\R18\Exchange::init_current_currency();
   ?>
-  window.currency = <?php echo "'$current_currency'"; ?>;
+  window.currency = <?php echo "'$current_currency'"; ?> || 'USD';
   console.log('>>> currency: ', window.currency);
 </script>
 

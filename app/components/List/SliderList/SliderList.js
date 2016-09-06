@@ -28,6 +28,11 @@ class SliderList extends Component {
       loop: true,
       centeredSlides: true
     })
+
+    const gradient = this.refs['gradient']
+    const h = window.thumbHeight + 'px'
+    gradient.style.height = h
+    gradient.style.marginTop = '-' + h;
   }
 
   render() {
@@ -55,6 +60,7 @@ class SliderList extends Component {
           <ul className='swiper-wrapper'>
             {this.thumbs}
           </ul>
+          <div ref='gradient' className='swiper-gradient' />
         </div>
 
         <div className='gridlist-title'>
