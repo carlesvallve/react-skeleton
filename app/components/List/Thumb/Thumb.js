@@ -58,6 +58,7 @@ class Thumb extends Component {
         className='swiper-slide'
         style={this.style}
         onClick={e => {
+          console.log('clicking on thumb', this)
           e.stopPropagation()
           this.props.dispatch(openPopup(this.props.data))
         }}>

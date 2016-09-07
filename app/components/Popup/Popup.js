@@ -49,7 +49,6 @@ class Popup extends Component {
 
       const that = this;
       video.addEventListener('webkitendfullscreen', function () {
-        //this.closePopup();
         that.props.dispatch(closePopup())
       }, false);
 
