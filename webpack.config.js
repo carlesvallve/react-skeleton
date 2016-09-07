@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './app/main.js',
+    entry: ['babel-polyfill', './app/main.js'], //'./app/main.js',
 
     output: {
         path: './sp-splitex/path/to',

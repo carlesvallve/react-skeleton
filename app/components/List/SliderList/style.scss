@@ -65,5 +65,8 @@
   margin-top: -380px;
 
   transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+
   pointer-events: none;
 }

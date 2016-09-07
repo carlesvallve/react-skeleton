@@ -6,6 +6,7 @@ import Thumb from '../Thumb/Thumb'
 import { connect } from 'react-redux'
 import { refreshList } from '../../../actions'
 
+
 const mapStateToProps = (state, ownProps) => {
   if (state.gridlist.itemCount === undefined) {
     state.gridlist.itemCount = ownProps.itemCount
@@ -21,35 +22,12 @@ class SliderList extends Component {
     super(props)
   }
 
-  // componentDidMount() {
-  //   const list = this.refs['list']
-  //   console.log(list);
-  //
-  //   list.addEventListener('mousewheel', function(event) {
-  //     console.log('mousewheel')
-  //
-  //     // We don't want to scroll below zero or above the width and height
-  //     var maxX = this.scrollWidth - this.offsetWidth;
-  //     var maxY = this.scrollHeight - this.offsetHeight;
-  //
-  //     // If this event looks like it will scroll beyond the bounds of the element, prevent it and set the scroll to the boundary manually
-  //     if (this.scrollLeft + event.deltaX < 0 ||
-  //        this.scrollLeft + event.deltaX > maxX ||
-  //        this.scrollTop + event.deltaY < 0 ||
-  //        this.scrollTop + event.deltaY > maxY) {
-  //
-  //       event.preventDefault();
-  //
-  //       // Manually set the scroll to the boundary
-  //       this.scrollLeft = Math.max(0, Math.min(maxX, this.scrollLeft + event.deltaX));
-  //       this.scrollTop = Math.max(0, Math.min(maxY, this.scrollTop + event.deltaY));
-  //     }
-  //
-  //   }, false)
-  // }
+  componentDidMount() {
+  }
 
+  // this happens tight after render
   componentDidUpdate() {
-    // this happens tight after render
+    // initialize swiper
     const swiper = new Swiper('.swiper-container', {
       slidesPerView: 'auto',
       visibilityFullFit: true,
@@ -61,34 +39,11 @@ class SliderList extends Component {
       onSlideChangeEnd: function (s) { s.fixLoop(); }
     })
 
+    // adjust gradient dimensions
     const gradient = this.refs['gradient']
     const h = window.thumbHeight + 'px'
     gradient.style.height = h
     gradient.style.marginTop = '-' + h;
-
-    const list = this.refs['list']
-    console.log(list);
-
-    list.addEventListener('mousewheel', function(event) {
-      // We don't want to scroll below zero or above the width and height
-      var maxX = this.scrollWidth - this.offsetWidth;
-      var maxY = this.scrollHeight - this.offsetHeight;
-      console.log('mousewheel', maxX, maxY, this.scrollWidth, this.scrollHeight, this.offsetWidth, this.offsetHeight)
-
-      // If this event looks like it will scroll beyond the bounds of the element, prevent it and set the scroll to the boundary manually
-      if (this.scrollLeft + event.deltaX < 0 ||
-         this.scrollLeft + event.deltaX > maxX ||
-         this.scrollTop + event.deltaY < 0 ||
-         this.scrollTop + event.deltaY > maxY) {
-
-        event.preventDefault();
-
-        // Manually set the scroll to the boundary
-        this.scrollLeft = Math.max(0, Math.min(maxX, this.scrollLeft + event.deltaX));
-        this.scrollTop = Math.max(0, Math.min(maxY, this.scrollTop + event.deltaY));
-      }
-
-    }, false)
   }
 
   render() {
