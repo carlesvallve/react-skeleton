@@ -25,9 +25,12 @@ class SliderList extends Component {
   componentDidMount() {
   }
 
-  // this happens tight after render
+  // this happens right after render
   componentDidUpdate() {
+
     // initialize swiper
+    // docs -> http://idangero.us/swiper/api/#.V8-AEJN97aY
+
     const swiper = new Swiper('.swiper-container', {
       slidesPerView: 'auto',
       visibilityFullFit: true,
@@ -51,7 +54,6 @@ class SliderList extends Component {
     let data = this.props.data;
     const text = this.props.text
     const percentage = this.props.percentage
-    //console.log('sliderlist is updating:', data);
 
     if (data === null) {
       itemCount = 0;
@@ -59,7 +61,6 @@ class SliderList extends Component {
 
     this.thumbs = [];
     const w = screen.width * 50 / 100;
-
     for (var i = 0; i < itemCount; i++) {
       this.thumbs.push(<Thumb key={i} width={w + 'px'} data={data.items[i]} />)
     }

@@ -48,7 +48,7 @@ class Thumb extends Component {
     pic.style.width = width + 'px';
     pic.style.height = height + 'px';
 
-    //this.props.height = height + 'px';
+    // store global var to resize gradient on sliderlist
     window.thumbHeight = height + 74;
   }
 
@@ -58,7 +58,10 @@ class Thumb extends Component {
         className='swiper-slide'
         style={this.style}
         onClick={e => {
-          console.log('clicking on thumb', this)
+          // make sure we are clicking on a centered thumb
+          if (e.clientX < screen.width / 4 || e.clientX > screen.width / 4 * 3) {
+            return;
+          }
           e.stopPropagation()
           this.props.dispatch(openPopup(this.props.data))
         }}>

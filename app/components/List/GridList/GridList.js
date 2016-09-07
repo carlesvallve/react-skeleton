@@ -16,8 +16,6 @@ const mapStateToProps = (state, ownProps) => {
 
 
 let GridList = ({ dispatch, data, text, percentage, itemCount }) => {
-  //console.log('gridlist is updating:', data);
-
   if (data === null) {
     itemCount = 0;
   }
