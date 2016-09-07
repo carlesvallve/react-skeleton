@@ -1,9 +1,5 @@
 require('./style.scss');
 import React, { Component } from 'react'
-var ReactDOM = require('react-dom');
-
-import { connect } from 'react-redux'
-import { openPopup, closePopup } from '../../../actions'
 
 
 class Thumb extends Component {
@@ -58,12 +54,7 @@ class Thumb extends Component {
         className='swiper-slide'
         style={this.style}
         onClick={e => {
-          // make sure we are clicking on a centered thumb
-          if (e.clientX < screen.width / 4 || e.clientX > screen.width / 4 * 3) {
-            return;
-          }
-          e.stopPropagation()
-          this.props.dispatch(openPopup(this.props.data))
+          this.props.onClick(e, this.props.data)
         }}>
 
         <div id='thumb-image' className='thumb-image'>
@@ -95,7 +86,5 @@ class Thumb extends Component {
     )
   }
 }
-
-Thumb = connect()(Thumb)
 
 export default Thumb

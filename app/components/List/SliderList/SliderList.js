@@ -4,7 +4,7 @@ import Swiper from 'swiper';
 import Thumb from '../Thumb/Thumb'
 
 import { connect } from 'react-redux'
-import { refreshList } from '../../../actions'
+import { refreshList, openPopup, closePopup } from '../../../actions'
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -24,6 +24,7 @@ class SliderList extends Component {
 
   componentDidMount() {
   }
+
 
   // this happens right after render
   componentDidUpdate() {
@@ -62,7 +63,20 @@ class SliderList extends Component {
     this.thumbs = [];
     const w = screen.width * 50 / 100;
     for (var i = 0; i < itemCount; i++) {
-      this.thumbs.push(<Thumb key={i} width={w + 'px'} data={data.items[i]} />)
+      this.thumbs.push(
+        <Thumb
+          key={i}
+          width={w + 'px'}
+          data={data.items[i]}
+          onClick ={(e, thumbData) => {
+            e.stopPropagation()
+            // make sure we are clicking on the centered thumb
+            if (e.clientX >= screen.width / 4 && e.clientX <= screen.width / 4 * 3) {
+              this.props.dispatch(openPopup(thumbData))
+            }
+          }}
+        />
+      )
     }
 
     return (

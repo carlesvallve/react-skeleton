@@ -78,7 +78,7 @@ video {
 
 .popup-text {
     font-family: 'museo-sans-rounded', sans-serif;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .popup-text dt {
@@ -134,8 +134,9 @@ video {
 }
 
 .popup-text .price {
+    font-size: 14px;
     font-weight: normal;
-    line-height: 24px;
+    line-height: 25px;
     display: inline-block;
     width: 112px;
     height: 24px;
@@ -149,7 +150,7 @@ video {
 }
 
 .popup-text .btn-summer {
-    font-size: 24px;
+    font-size: 22px;
     position: absolute;
     bottom: 0;
     left: 0;

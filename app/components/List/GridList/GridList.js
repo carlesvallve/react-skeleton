@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Thumb from '../Thumb/Thumb'
 
 import { connect } from 'react-redux'
-import { refreshList } from '../../../actions'
+import { refreshList, openPopup, closePopup } from '../../../actions'
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -25,7 +25,17 @@ let GridList = ({ dispatch, data, text, percentage, itemCount }) => {
   const w = ((90) / columns) - 0.5;
 
   for (var i = 0; i < itemCount; i++) {
-    thumbs.push(<Thumb key={i} width={w + '%'} data={data.items[i]} />)
+    thumbs.push(
+      <Thumb
+        key={i}
+        width={w + '%'}
+        data={data.items[i]}
+        onClick ={(e, thumbData) => {
+          e.stopPropagation()
+          dispatch(openPopup(thumbData))
+        }}
+      />
+    )
   }
 
   return (
