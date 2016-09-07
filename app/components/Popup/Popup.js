@@ -40,11 +40,20 @@ class Popup extends Component {
     }
 
     // update video
-    if (this.refs.video !== undefined) {
+    const video = this.refs.video
+    if (video !== undefined) {
+
       if (this.videoPath === this.lastVideoPath) {
-        this.refs.video.currentTime = this.videoTime;
+        video.currentTime = this.videoTime
       }
-      this.refs.video.play();
+
+      const that = this;
+      video.addEventListener('webkitendfullscreen', function () {
+        //this.closePopup();
+        that.props.dispatch(closePopup())
+      }, false);
+
+      video.play();
     }
   }
 
@@ -61,6 +70,8 @@ class Popup extends Component {
       this.refs.video.pause();
       this.lastVideoPath = this.videoPath
       this.videoTime = this.refs.video.currentTime;
+
+      this.refs.video.removeEventListener('webkitendfullscreen', false);
     }
   }
 
