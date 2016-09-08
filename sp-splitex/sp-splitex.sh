@@ -1,7 +1,7 @@
 #!/bin/bash
 
 folder="sp-splitex"
-base=_hotsales
+base=hotsales
 bundle=$folder/path/to/bundle.js
 out_dir=$folder/out
 

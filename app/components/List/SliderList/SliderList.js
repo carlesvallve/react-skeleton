@@ -6,6 +6,8 @@ import Thumb from '../Thumb/Thumb'
 import { connect } from 'react-redux'
 import { refreshList, openPopup, closePopup } from '../../../actions'
 
+//import { DisableBrowserSwipe } from '../../Utils/Utils'
+
 
 const mapStateToProps = (state, ownProps) => {
   if (state.gridlist.itemCount === undefined) {
@@ -48,6 +50,9 @@ class SliderList extends Component {
     const h = window.thumbHeight + 'px'
     gradient.style.height = h
     gradient.style.marginTop = '-' + h;
+
+    // disable swipe back in browser
+    //DisableBrowserSwipe(this.refs['list']);
   }
 
   render() {

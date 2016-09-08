@@ -45,15 +45,22 @@ export const SetCookieState = () => {
   }
 
 
-  // get 'il' cookie
-  // if ((!<?php echo isset($_COOKIE["il"]) ? 'true' : 'false';?>) && (document.querySelector('.logOut') === null)) {
-  const cookie = getCookie('il') && document.querySelector('.logOut') === null;
-  console.log('>>> cookie: ' + cookie);
+  // get if user is internal
+
+  const doIhaveACookie = getCookie('il') ? true : false;
+  const amIComingFromR18 = document.referrer.indexOf("r18.com") > -1;
+  const amIComingFromTheSamePage = document.referrer === window.location.href;
+
+  const internalUser = (doIhaveACookie || (amIComingFromR18 && !amIComingFromTheSamePage)) ? true : false;
+  console.log('>>> internal user: ' + internalUser);
+  console.log('       - doIhaveACookie:', doIhaveACookie);
+  console.log('       - amIComingFromR18:', amIComingFromR18);
+  console.log('       - amIComingFromTheSamePage:', amIComingFromTheSamePage);
 
 
   // modify native header and footer
 
-  if (cookie === null) {
+  if (!internalUser) {
     if (window.platform === 'desktop') {
       const gDef = document.querySelector('.gDef');
       console.log(gDef);
@@ -87,11 +94,11 @@ export const SetCookieState = () => {
   var root = document.getElementById('root');
   var fixedStyles;
 
-  if (cookie || window.platform === 'desktop') {
+  if (internalUser || window.platform === 'desktop') {
     // displaying normal dmm
     if (window.platform === 'desktop') {
       root.style.marginTop = '-2px';
-      root.style.paddingBottom = cookie ? '370px' : '0';
+      root.style.paddingBottom = internalUser ? '370px' : '0';
     } else {
       root.style.paddingTop = '78px';
       root.style.marginBottom = '-1px';

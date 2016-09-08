@@ -7,6 +7,8 @@ class Thumb extends Component {
   constructor(props) {
     super(props)
 
+    this.resizePic.bind(this);
+
     let data = this.props.data;
     if (data == null) {
       data = {
@@ -34,21 +36,30 @@ class Thumb extends Component {
   }
 
 
-  componentDidMount() {
+  resizePic() {
     // get pic element reference
     var pic = this.refs['pic']
 
-    // resize pic
-    const width = pic.offsetWidth;
-    const height = width * 1.42;
-    pic.style.width = width + 'px';
-    pic.style.height = height + 'px';
+    if (pic) {
+      // resize pic
+      const width = pic.offsetWidth;
+      const height = width * 1.42;
+      pic.style.width = width + 'px';
+      pic.style.height = height + 'px';
 
-    // store global var to resize gradient on sliderlist
-    window.thumbHeight = height + 74;
+      // store global var to resize gradient on sliderlist
+      window.thumbHeight = height + 74;
+    }
+  }
+
+
+  componentDidMount() {
+    this.resizePic();
   }
 
   render() {
+    this.resizePic();
+
     return (
       <li id='thumb'
         className='swiper-slide'
