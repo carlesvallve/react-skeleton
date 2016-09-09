@@ -70,9 +70,9 @@ class SliderList extends Component {
           onClick ={(e, thumbData) => {
             e.stopPropagation()
             // make sure we are clicking on the centered thumb
-            if (e.clientX >= screen.width / 4 && e.clientX <= screen.width / 4 * 3) {
-              this.props.dispatch(openPopup(thumbData))
-            }
+            //if (e.clientX >= screen.width / 4 && e.clientX <= screen.width / 4 * 3) {
+            this.props.dispatch(openPopup(thumbData))
+            //}
           }}
         />
       )
