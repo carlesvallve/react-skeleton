@@ -6,7 +6,7 @@ import Thumb from '../Thumb/Thumb'
 import { connect } from 'react-redux'
 import { refreshList, openPopup, closePopup } from '../../../actions'
 
-//import { DisableBrowserSwipe } from '../../Utils/Utils'
+
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -22,9 +22,6 @@ class SliderList extends Component {
 
   constructor(props) {
     super(props)
-  }
-
-  componentDidMount() {
   }
 
 
@@ -50,9 +47,6 @@ class SliderList extends Component {
     const h = window.thumbHeight + 'px'
     gradient.style.height = h
     gradient.style.marginTop = '-' + h;
-
-    // disable swipe back in browser
-    //DisableBrowserSwipe(this.refs['list']);
   }
 
   render() {

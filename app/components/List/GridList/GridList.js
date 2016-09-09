@@ -20,6 +20,8 @@ let GridList = ({ dispatch, data, text, percentage, itemCount }) => {
     itemCount = 0;
   }
 
+  
+
   var thumbs = [];
   const columns = 4
   const w = ((90) / columns) - 0.5;
