@@ -41,7 +41,7 @@ class Popup extends Component {
       body.style.marginRight = '15px';
       //console.log('scroll has been disabled');
     } else if (window.platform === 'tablet') {
-      ToggleTouchMove(false);
+      //ToggleTouchMove(false);
     }
 
     // update video
@@ -69,7 +69,7 @@ class Popup extends Component {
       body.style.marginRight = '0';
       //console.log('scroll has been enabled');
     } else if (window.platform === 'tablet') {
-      ToggleTouchMove(true);
+      //ToggleTouchMove(true);
     }
 
     // pause video and record video references
