@@ -276,21 +276,3 @@ export const SetData = (itemCount, cb, err) => {
   );
 
 }
-
-
-// Enable/Disable TouchMove in smartphone and tablets
-
-export const preventDefault = (e) => {
-  e.preventDefault();
-}
-
-export const ToggleTouchMove = (enable) => {
-  if (enable) {
-    console.log('enabling touchmove');
-    document.body.removeEventListener('touchmove', preventDefault);
-  } else {
-    console.log('disabling touchmove')
-    document.body.addEventListener('touchmove', preventDefault, false);
-  }
-
-}

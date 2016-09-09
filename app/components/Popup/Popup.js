@@ -3,8 +3,6 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { openPopup, closePopup } from '../../actions'
 
-import { ToggleTouchMove } from '../Utils/Utils'
-
 
 const mapStateToProps = (state, ownProps) => {
   if (state.popup.active === undefined) {
@@ -35,13 +33,14 @@ class Popup extends Component {
 
   openPopup() {
     // disable scroll on desktop
-    if (window.platform === 'desktop') {
+    if (window.platform === 'desktop' || window.platform === 'tablet') {
       const body = document.body;
       body.style.overflow = 'hidden';
       body.style.marginRight = '15px';
-      //console.log('scroll has been disabled');
-    } else if (window.platform === 'tablet') {
-      //ToggleTouchMove(false);
+
+      body.style.height = '100%';
+      body.style.width = '100%';
+      body.style.position = 'fixed';
     }
 
     // update video
@@ -63,13 +62,14 @@ class Popup extends Component {
 
   closePopup() {
     // enable scroll on desktop
-    if (window.platform === 'desktop') {
+    if (window.platform === 'desktop' || window.platform === 'tablet') {
       const body = document.body;
       body.style.overflow = 'auto';
       body.style.marginRight = '0';
-      //console.log('scroll has been enabled');
-    } else if (window.platform === 'tablet') {
-      //ToggleTouchMove(true);
+
+      body.style.height = null;
+      body.style.width = null;
+      body.style.position = null;
     }
 
     // pause video and record video references
