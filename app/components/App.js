@@ -17,7 +17,6 @@ import { refreshList } from '../actions'
 
 
 let App = ({ dispatch }) => {
-
   // config application
 
   SetLanguage();

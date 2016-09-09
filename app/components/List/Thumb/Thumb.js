@@ -39,10 +39,11 @@ class Thumb extends Component {
   resizePic() {
     // get pic element reference
     var pic = this.refs['pic']
+    var thumb = this.refs['thumb']
 
     if (pic) {
       // resize pic
-      const width = pic.offsetWidth;
+      const width = thumb.offsetWidth //pic.offsetWidth;
       const height = width * 1.42;
       pic.style.width = width + 'px';
       pic.style.height = height + 'px';
@@ -55,6 +56,16 @@ class Thumb extends Component {
 
   componentDidMount() {
     this.resizePic();
+
+    let self = this;
+    window.addEventListener('orientationchange', function () {
+      window.setTimeout(function() {
+        self.resizePic();
+      }, 1)
+    });
+  }
+
+  componentWillUnmount() {
   }
 
   render() {
@@ -62,6 +73,7 @@ class Thumb extends Component {
 
     return (
       <li id='thumb'
+        ref='thumb'
         className='swiper-slide'
         style={this.style}
         onClick={e => {
