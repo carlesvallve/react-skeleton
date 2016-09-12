@@ -143,6 +143,7 @@ export const SetData = (itemCount, cb, err) => {
     'lang': window.lang,      // 'en'
     'unit': window.currency,  // 'EUR'
     'device':'mobile',
+    'safe': 1,
     'content_id':6565
   };
 
@@ -240,13 +241,13 @@ export const SetData = (itemCount, cb, err) => {
   // prepare params for AJAX
 
   function xparams(params) {
-    var f = '';
     var keys = Object.keys(params);
+    var out = [];
     keys.map(function(a) {
-      f += a + '=' + params[a] + '&'
+      out.push(a + '=' + params[a])
     });
-    // trim the last &
-    return f.replace(/.&$/g, '');
+
+    return out.join('&');
   }
 
 

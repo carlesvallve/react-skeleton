@@ -21,6 +21,7 @@ class Popup extends Component {
     this.lastVideoPath = null;
     this.videoTime = 0;
 
+    this.endFullScreen = this.endFullScreen.bind(this);
     this.openPopup = this.openPopup.bind(this);
     this.closePopup = this.closePopup.bind(this);
   }
@@ -29,6 +30,10 @@ class Popup extends Component {
     if (this.props.active === true) {
       this.openPopup();
     }
+  }
+
+  endFullScreen() {
+    this.props.dispatch(closePopup())
   }
 
   openPopup() {
@@ -51,10 +56,7 @@ class Popup extends Component {
         video.currentTime = this.videoTime
       }
 
-      const that = this;
-      video.addEventListener('webkitendfullscreen', function () {
-        that.props.dispatch(closePopup())
-      }, false);
+      video.addEventListener('webkitendfullscreen', this.endFullScreen, false)
 
       video.play();
     }
@@ -78,7 +80,7 @@ class Popup extends Component {
       this.lastVideoPath = this.videoPath
       this.videoTime = this.refs.video.currentTime;
 
-      this.refs.video.removeEventListener('webkitendfullscreen', false);
+      this.refs.video.removeEventListener('webkitendfullscreen', this.endFullScreen);
     }
   }
 
