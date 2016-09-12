@@ -1,34 +1,5 @@
 
-/* replicate server's special pages css environment */
 
-#contents:after {
-   content: '';
-}
-
-.mainWrap {
-    top: 0;
-    left: 0;
-    position: relative;
-    background: #fff;
-    height: 100%;
-    width: 100%;
-    -webkit-overflow-scrolling: touch;
-}
-
-.mainWrap {
-    z-index: 10;
-    top: 0;
-    left: 0;
-    background: #fff;
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-}
-
-.pageWrap {
-    margin-top: 0;
-    background: #fff;
-    min-height: 800px;
-}
 
 ul, li {
     list-style: none;
@@ -49,9 +20,7 @@ html, body, ol, ul, li, h1, p {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
-user agent stylesheet
-ul, menu, dir {
+ul, menu {
     display: block;
     list-style-type: disc;
     -webkit-margin-before: 1em;
@@ -99,25 +68,6 @@ a:hover, a:visited, a:link, a:active {
     text-decoration: none;
 }
 
-/* overrides */
-#contents {
-    position: relative;
-    width: 100%;
-    padding: 0;
-
-    margin: 0 auto;
-    text-align: left;
-    box-shadow: none; //0 0 8px 1px rgba(25,25,25,.3);
-    background: -webkit-linear-gradient(top,#fff,#f0f0f0);
-    background: -moz-linear-gradient(top,#fff,#f0f0f0);
-    background: linear-gradient(top,#fff,#f0f0f0);
-
-    display: block;
-    min-height: 1%;
-}
-
-// desktop
-
 body {
     margin: 0;
     padding: 0;
@@ -130,130 +80,14 @@ body {
 .app {
     font-family: 'museo-sans-rounded', sans-serif;
 
-    background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-en.png');
-    background-repeat: no-repeat;
-    background-position: center top, center bottom 70px;
-    background-size: contain, contain;
+    //background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-en.png');
+    //background-repeat: no-repeat;
+    //background-position: center top, center bottom 70px;
+    //background-size: contain, contain;
 
     max-width: 980px;
     min-width: 980px;
     margin: 0 auto;
 
     box-shadow: 0 0 8px 1px rgba(25,25,25,.3);
-}
-
-.app.en {
-  background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-en.png');
-}
-
-.app.zh {
-  background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-zh.png');
-}
-
-.categories-list {
-    margin-top: 340px;
-}
-
-// tablet
-
-.app.tablet {
-  max-width: 100%;
-  min-width: 100%;
-}
-
-
-// smartphone
-
- .app.smartphone {
-    background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-sp-en.png');
-    background-position: center top;
-    background-size: 100%;
-
-    max-width: 100%;
-    min-width: 100%;
-
-    padding-top: 75%;
-}
-
-.app.smartphone.en {
-  background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-sp-en.png');
-}
-
-.app.smartphone.zh {
-  background-image: url('/assets/img/special/hot-sales/banners/bg-top-gradient-sp-zh.png');
-}
-
-.smartphone .categories-list {
-    margin-top: -65px;
-    padding-bottom: 25px;
-}
-
-.smartphone footer {
-    background: #303030;
-    color: #A5A9B2;
-    font-size: 0.78em;
-    text-align: center;
-    padding: 10px;
-}
-
-
-
-/* buttons */
-
-.btn-summer
-{
-    font-size: 30px;
-    font-weight: 800;
-    display: inline-block;
-    padding: 4px 20px;
-    letter-spacing: -.9px;
-    color: #fff;
-    border: solid 1px #a10033;
-    border-bottom-width: 5px;
-    border-radius: 3px;
-    background: #ef1c48; // #E72727
-    box-shadow: 0 1px 6px 0 rgba(161, 0, 51, .52);
-    text-decoration: none;
-    cursor: pointer;
-    min-width: 300px;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    text-align: center;
-}
-
-.btn-signup {
-    display: inline-block;
-    padding: 8px 30px;
-    color: #fff;
-    border: 1px solid #b10e31;
-    border-radius: 3px;
-    background: #e03551;
-    font-size: 12pt;
-    font-weight: normal;
-    letter-spacing: 0px;
-    text-decoration: none;
-    margin-top: 10px;
-    cursor: pointer;
-    text-decoration: false;
-    text-align: center;
-}
-
-.smartphone .btn-summer {
-    font-size: 22px;
-    display: block;
-    box-sizing: border-box;
-    margin: auto;
-    padding: 10px 0;
-    text-align: center;
-
-    width: 90%;
-    max-width: 355px;
-}
-
-.u-fColor--deepred {
-    color: #6b0934 !important;
 }

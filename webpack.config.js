@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 
 module.exports = {
-    entry: ['babel-polyfill', './app/main.js'], //'./app/main.js',
+    entry: ['babel-polyfill', './app/main.js'],
 
     output: {
         path: './sp-splitex/path/to',
@@ -11,7 +11,7 @@ module.exports = {
     devServer: {
         inline: true,
         contentBase: './app',
-        port: 1972
+        port: 1234
     },
 
     module: {

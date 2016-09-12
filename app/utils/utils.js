@@ -2,7 +2,7 @@
 
 export const SetLanguage = () => {
   window.lang = document.getElementsByTagName('html')[0].getAttribute('lang') || 'en';
-  window.content = require("json!../../assets/json/content.json");
+  window.content = require("json!../assets/json/content.json");
   console.log('>>> lang: ' + window.lang);
 }
 
